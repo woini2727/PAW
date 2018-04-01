@@ -1,0 +1,11 @@
+Options -Indexes
+
+AuthUserFile img/
+
+<Files ~".(jpeg|jpg|gif|png)$">
+order allow,deny
+allow from all
+</Files>
+ErrorDocument 404 'HOla error 4 cero 4 '
+
+
