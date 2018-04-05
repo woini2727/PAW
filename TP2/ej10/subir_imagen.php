@@ -37,7 +37,6 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "El archivo ". basename( $_FILES["fileToUpload"]["name"]). " ha sido subidooooo.";
         
-        
         $orgfile = $target_file;
         list($width, $height)=getimagesize($orgfile);
         $newfile=imagecreatefromjpeg($orgfile);
@@ -48,9 +47,7 @@ if ($uploadOk == 0) {
         imagecopyresampled($trucolor, $newfile, 0, 0, 0, 0, $newwidth, $newwidth, $width, $height);
         imagejpeg($trucolor,$name_thumbs,100);
         echo '<img src="'.$name_thumbs.'">';
-
-        
-        
+     
 
     } else {
         echo "El archivo no se pudo subir";
