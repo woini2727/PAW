@@ -36,25 +36,32 @@
 			  			if($linecount==1){
 			  				echo "<p>".$linea."</p>";
 			  			}
-			  			if($linecount==2){
+			  			if($linecount==3){
 			  				$linea=trim($linea);
-			  				echo "<figure>"."<img src=" .$linea. " height=50 width=50></figure>";
+			  				echo "<figure>"."<img src=".$linea." height=70 width=70></figure><br>";
+			  			}
+			  			if($linecount==2){
+			  				echo "Fecha de subida: " . $linea . "<br>";
 			  			}
 			  			$linecount++;
 					}
 					fclose($myfile);
+					
 				}
 
 				}
 	?>
+
 	</article>
-	<a href="agregar_post.html">Agregar Post</a> <br><br>
+	<br><br><br>
+	<a href="agregar_post.html">Agregar Articulo</a> <br><br>
 	<?php  
 		$myfile = fopen("persistencia.txt", "r") or die("Unable to open file!");
 		$linea=fgets($myfile);
 		$linea=trim($linea);
 		if ($linea!==""){
-		echo"<a href=eliminar.php>Eliminar Post</a>";
+		echo"<a href=eliminar.php>Eliminar Articulos</a><br><br>";
+		echo"<a href=editar.php>Editar Articulos</a>";
 		}
 	?>
 
