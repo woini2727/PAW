@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Trabajo práctico N° 2</h1>
+<p>Tecnologías del Lado del Servidor – Parte 1
+Apache + PHP </p><p>
+  Woinilowicz, Salvador - 121546 - salvador.woini.@gmail.com</p><p>
+Rodriguez Agustin -96898 agustinrodriguez206@gmail.com	
+</p> 
+	<h2>Configuración del stack</h2>
+</div>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+	      <h3>
+		      1) ¿Qué es un servidor Web? ¿Cuál es su rol en la arquitectura de la Web? Describa su operación en relación al protocolo HTTP.
+		     </h3>
+	      <p>
+		      Un servidor web es un software encargado de resolver múltiples peticiones de recursos mediantes conexiones bidireccionales o unidireccionales, sincrónicas o asincrónicas, devolviendo al cliente un recurso interpretado por el navegador, Cumpliendo el rol de despachador de recursos, que fueron peticionados por el cliente, el servidor web actúa generalmente mediante el protocolo http, mediante mensajes definidos como get y post 
+		    </p>
+		</div>
+	    <div class="col-sm-4">
+	      <h3>
+	      	2) Instale el servidor Web Apache. Describa someramente los pasos realizados.
+	      </h3>
+			<p>en una consola escribo el comando</p> <p>
+			<code>$ sudo apt install apache2 </code> </p> 
+			<p>
+				Verificar colocando localhost en el browser :
+			</p>
+				<a href="img/imagenapache2.png">apache2</a>
+	    </div>
+    	<div class="col-sm-4">
+	      <h3>3) Extienda la instalación de Apache para que el mismo pueda servir páginas desarrolladas en PHP (como módulo). Describa someramente los pasos realizados. Prueba la instalación mediante la función phpinfo(). ¿Qué información brinda la misma?</h3>    
+
+	      <p>
+	      	Para servir paginas en php, se debe instalar php7.1 (o cualquier otro php) , 	libapache-mod-php7.1
+			para eso en la consola escribimos:
+			</p>
+
+			<p>
+				<code>$ sudo apt install libapache2-mod-php7.1 </code>
+			</p> 
+			phpinfo es una funcion que muestra toda la informacion de configuracion de php ,
+			crea un archivo php por ejemplo info.php , con el contenido 
+			<?php phpinfo() ?>
+			<a href="img/imagenphpinfo.png">imagen</a>
+			</p>
+    	</div>
+
+	    <div class="col-sm-4">
+	      <h3>
+		      4) ¿Qué archivo de configuración se debe modificar para cambiar los mensajes de error mostrados por el servidor cuando ocurre un error en nuestro sitio? ¿Cómo cambiaría el mensaje default para que frente a un error 404 se muestre una imagen particular?
+		  </h3>    
+
+	      <p>
+			El archivo a configurar es el localized-error-pages.conf, para cambia el error 404 se debe colocar la siguiente línea:
+		  </p>
+		  <p>
+			ErrorDocument 404 "NONONO error 404 "
+		  </p>
+		  <p>
+			También se puede crear un archivo htaccess con la misma línea, pero seria un cambio meramente local para el directorio donde coloco el archivo, creando esta configuración para todos los sub directorios
+		  </p> 
+
+
+    	</div>
+	
+	    <div class="col-sm-4">
+	      <h3>
+		      5) ¿Cómo hago para que el servidor limite el acceso a partes de mi sitio sólo a usuarios ubicados en un país en particular?
+		  </h3>    
+
+	      <p>
+			Podemos instalar geoip2 para apache y usar estos comandos:
+
+			GeoIPEnable On
+			GeoIPDBFile /path/to/GeoIP.dat
+
+
+		  </p>
+		  <p>
+		  	<code>
+			SetEnvIf GEOIP_COUNTRY_CODE US AllowCountry  
+			SetEnvIf GEOIP_COUNTRY_CODE CA AllowCountry
+			SetEnvIf GEOIP_COUNTRY_CODE MX AllowCountry
+
+
+			Deny from all
+			Allow from env=AllowCountry
+			
+			</code>
+
+		  </p>
+		  <p>
+
+			En este ejemplo Canadá, méxico y Estados Unidos son países permitidos para el acceso a nuestro sitio
+		  </p> 
+
+
+    	</div>
+
+
+
+
+
+
+    	
+	
+	    <div class="col-sm-4">
+	      <h3>
+				      
+			6) ¿Para qué sirve el archivo “.htaccess”? ¿Cuáles son las principales herramientas que permite utilizar?
+		  </h3>    
+
+	      <p>
+			Permite a los administradores aplicar distintas políticas de acceso a directorios o archivos con la idea de mejorar la seguridad de su página web y, por tanto, evitar acceso a terceros. Cuando visitamos una página web cualquiera y pulsamos sobre un enlace o queremos descargarnos un archivo, en el proceso de trámite de la petición, el servidor web consulta el archivo .htaccess con la idea de aplicar las directivas y restricciones definidas antes de cursar la petición y, lógicamente, cancelar peticiones que se encuentren prohibidas dentro de este archivo (cuyo ámbito de actuación es el directorio en el que se encuentra y todos los subdirectorios que se encuentran por debajo de éste).
+		  </p>
+		  <p>
+			Gracias a este archivo podremos configurar nuestro servidor web para hacerlo algo más seguro pero, además, también podremos realizar redirecciones, crear mensajes de error personalizados, restringir el acceso a carpetas, evitar el listado de directorios de nuestro servidor o permitir el uso de nuestro dominio sin usar las famosas ‘www’.
+		  </p>
+		  <p>
+			
+		  </p> 
+
+
+    	</div>
+     	<div class="col-sm-4">
+	      <h3>
+		      7) De un ejemplo de una regla de reescritura junto con la explicación de su uso.
+
+		  </h3>    
+
+	      <p>
+			RewriteCond %{HTTP_REFERER} !^http://(www\.)?dominio.dom.*$ 
+
+		  </p>
+		  <p>
+			[NC]
+			RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$
+			http://www.dominio.dom/noenlaces.gif [R,NC]
+
+		  </p>
+		  <p>
+			Con RewriteCond comprobamos que el enlace no provenga de nuestro dominio (observe el ! delante de la expresión). Entonces si el enlace no proviene del dominio redirige a una imagen genérica.
+
+		  </p> 
+		</div>
+
+
+		
+
+  		</div>
+  		</div>
+	</div>
+
+</body>
+
+</style>
+<footer> 
+ <style>
+div.fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    border: 3px solid #73AD21;
+}
+</style>
+	<div class="fixed"></div>
+	<a href="index2.html" ><button type="button" class="btn btn-primary">Parte 2</button></a>
+</footer>
+</html>
