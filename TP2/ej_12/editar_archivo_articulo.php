@@ -27,7 +27,7 @@
 			
 	
 	fclose($myfile);
-	include("blog.php");
+	include("Blog.php");
 ?>
 </body>
  </html>
