@@ -30,7 +30,7 @@
 
 	}
 	fclose($myfile);
-	include("Blog.php");
+	include("blog2.php");
 
 	//<a href="blog.php">Volver</a>
  ?>

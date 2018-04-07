@@ -31,5 +31,5 @@
 	
 	fclose($myfile);
 	//agrego un archico nuevo con el titulo,desc y la img
-	include("Blog.php");
+	include("Blog2.php");
  ?>

@@ -20,6 +20,7 @@
 					}
 		 ?>
 		 <input type="submit" name="Enviar" value="Eliminar">
+		 <input type="boton" name="boton" type="hidden">
 	</form>	 
 </body>
 </html>

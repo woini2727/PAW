@@ -24,6 +24,7 @@
 		Titulo del articulo<input type="text" name="titulo"><br><br>
 		Descripcion del articulo<input type="text" name="descripcion"><br><br>
 		Imagen <input type="file" name="imagen" id="imagen" accept="image/x-png,image/gif,image/jpeg"><br><br>
+		<input type="hidden" name="boton" value=2>
 		<input type="submit" name="Enviar" value="Aceptar">
 		</form>
 	 
