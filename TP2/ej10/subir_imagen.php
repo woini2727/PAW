@@ -41,15 +41,10 @@ if ($uploadOk == 0) {
         $orgfile = $target_file;
         list($width, $height)=getimagesize($orgfile);
         $newfile=imagecreatefromjpeg($orgfile);
-
-        
-
-        
-            $res_img = imagecreatefromjpeg($imagen);
-            $newimage = imagescale($newfile, $newwidth, $newheight);
-            imagejpeg($newimage, $name_thumbs);
-            echo '<img src="'.$name_thumbs.'">';
-
+        $res_img = imagecreatefromjpeg($imagen);
+        $newimage = imagescale($newfile, $newwidth, $newheight);
+        imagejpeg($newimage, $name_thumbs);
+        echo '<img src="'.$name_thumbs.'">';
     } else {
         echo "El archivo no se pudo subir";
     }
