@@ -15,6 +15,7 @@ class Turno {
 	private $fecha_nac;
 	private $pelo;
 	private $turno;
+	private $campos = ['titulo', 'nombre'.'email','minutos','telefono','edad','talle','atura','fecha_nac','pelo','turno'];
 
 
 	public function selectAll() {
@@ -25,6 +26,24 @@ class Turno {
 		
 	}
 	
+	
+
+	public function SetBlog($datos){
+		if ($datos['titulo']||$datos['nombre']||$datos['email']||$datos['minutos']||$datos['telefono']||$datos['edad']||$datos['talle']||$datos['altura']||$datos['fecha_nac']||$datos['pelo']||$datos['turno']) {
+			throw new Exception("Error en la peticion", 1);
+			
+		}
+		foreach ($this->campos as $campo) {
+			$this->$campo = $datos[$campo];
+		}
+	}
+
+	public function insert(){
+		
+	}
+
+
+
 }
 
  ?>

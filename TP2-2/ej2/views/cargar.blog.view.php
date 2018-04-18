@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>tp8_turno</title>
-	</head>
-	<body>
-		<header>
-			<h1>Pida su turno</h1>
-		</header>
-
-		 <form action="prueba.php" method="post">
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Turnos dr PAW</title>
+</head>
+<body>
+	<h1>Reserve su turno</h1>
+	<form action="" method="post" style="text-align: center;">
 		 	<label for="titulo">Titulo</label>
 		 	<select name="titulo" size="1" name="titulo">
 	 			<option value="Sr">Sr</option>
@@ -35,7 +32,7 @@
 	 		<label for="color de pelo">color de pelo</label>
 	 		<input type="text" name="color_pelo"><br>
 	 		<label for="horario del turno">Horario del Turno</label>
-	 		<select name="horario" size="1" name="horario">
+	 		<select name="horario" size="1" name="horario"><br>
 	 			<option value="8">8</option>
 	 			<option value="9">9</option>
 	 			<option value="10">10</option>
@@ -48,7 +45,7 @@
 	 			<option value="17">17</option>
 	 			
 	 		</select>
-	 		<select name="minutos" size="1" name="minutos">
+	 		<select name="minutos" size="1" name="minutos"><br>
 	 			<option value="00">:00</option>
 	 			<option value="15">:15</option>
 	 			<option value="30">:30</option>
@@ -59,7 +56,5 @@
 	 		<button type="submit" value="submit">Enviar</button>
 
 		 </form>
-	</body>
-
-
+</body>
 </html>
