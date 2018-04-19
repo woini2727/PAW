@@ -7,8 +7,11 @@
 <body>
 	<h1>Turnos dr Paw</h1>
 	<main>
+		<section>
+	
+		</section>
 		<!--
-		aqui coloco el formulario para tomar turnos 
+		
 		-->
 	</main>
 	<a href="ej2/views/cargar.blog.view.php">Agregar Turno</a>

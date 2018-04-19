@@ -21,7 +21,8 @@
 
 $turnos = new Turnos();
 $turnos->setBlog($datosTurnos);
-#$turnos->insert();
+$turnos->print();
+$turnos->insert();
 /*
 */		
 /*

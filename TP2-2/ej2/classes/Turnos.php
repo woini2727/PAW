@@ -18,6 +18,11 @@ class Turnos {
 	private $turno;
 	private $campos = ['titulo', 'nombre','email','minutos','telefono','edad','talle','atura','fecha_nac','pelo','turno'];
 
+	public function print(){
+		echo 'hola mundo'
+	}
+
+
 	public function selectAll() {
 		$pdo = PdoFactory::build();
 		$query = $pdo->prepare("SELECT * FROM ej8_turnos");
@@ -39,12 +44,13 @@ class Turnos {
 
 /*
 */		
-	public function insert(){
+	public function insert()
+	{
 		$campos = $this->getCampos();
-		$pdoString = $this->getValoresParametrizadosPDO();
+		$pdoString = $this->getValoresParametrizadosPDO ();
 		$pdo = PdoFactory::build();
-		$query = $pdo->prepare("INSERT INTO rod_woini_tp2_2 ($campos) VALUES ($pdoString)");
-		$query->execute($this->getValues());
+		$query = $pdo->prepare("INSERT INTO ej8_turnos ($campos) VALUES ($pdoString)");
+		 $query->execute($this->getValues());
 
 	}
 	public function getCampos(){
