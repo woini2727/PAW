@@ -1,8 +1,9 @@
 <?php 
+
 require __DIR__ . '/../core/PdoFactory.php';
 
 
-class Turno {
+class Turnos {
 
 	private $titulo;
 	private $nombre;
@@ -15,8 +16,7 @@ class Turno {
 	private $fecha_nac;
 	private $pelo;
 	private $turno;
-	private $campos = ['titulo', 'nombre'.'email','minutos','telefono','edad','talle','atura','fecha_nac','pelo','turno'];
-
+	private $campos = ['titulo', 'nombre','email','minutos','telefono','edad','talle','atura','fecha_nac','pelo','turno'];
 
 	public function selectAll() {
 		$pdo = PdoFactory::build();
@@ -27,23 +27,45 @@ class Turno {
 	}
 	
 	
-
 	public function SetBlog($datos){
-		if ($datos['titulo']||$datos['nombre']||$datos['email']||$datos['minutos']||$datos['telefono']||$datos['edad']||$datos['talle']||$datos['altura']||$datos['fecha_nac']||$datos['pelo']||$datos['turno']) {
-			throw new Exception("Error en la peticion", 1);
-			
-		}
-		foreach ($this->campos as $campo) {
-			$this->$campo = $datos[$campo];
+		if ((is_null($datos['titulo']))||(is_null($datos['nombre']))) {
+			throw new Exception("Error en la peticion", 1);	
+			foreach ($this->campos as $campo) {
+				$this->$campo = $datos[$campo];
+			}
 		}
 	}
 
+
+/*
+*/		
 	public function insert(){
-		
+		$campos = $this->getCampos();
+		$pdoString = $this->getValoresParametrizadosPDO();
+		$pdo = PdoFactory::build();
+		$query = $pdo->prepare("INSERT INTO rod_woini_tp2_2 ($campos) VALUES ($pdoString)");
+		$query->execute($this->getValues());
+
+	}
+	public function getCampos(){
+		return join(',', $this->campos);
 	}
 
+	public function getValoresParametrizadosPDO()
+    {
+        return implode(',', array_fill(0, count($this->campos), '?')); 
 
+    }
+
+
+        public function getValues()
+    {
+        $data = [];
+        foreach ($this->campos as $campo) {
+            $data[] = $this->$campo;
+        }
+        return $data;
+    }
 
 }
-
  ?>

@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1>Reserve su turno</h1>
-	<form action="" method="post" style="text-align: center;">
+	<form action="../guardar.blog.php" method="post" enctype="multipart/form-data" style="text-align: center;">
 		 	<label for="titulo">Titulo</label>
 		 	<select name="titulo" size="1" name="titulo">
 	 			<option value="Sr">Sr</option>
