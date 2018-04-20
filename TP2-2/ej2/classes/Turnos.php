@@ -19,11 +19,11 @@ class Turnos {
 	private $campos = ['titulo', 'nombre','email','minutos','telefono','edad','talle','atura','fecha_nac','pelo','turno'];
 
 	public function print(){
-		echo 'hola mundo'
+		echo 'hola mundo';
 	}
 
 
-	public function selectAll() {
+	public static function selectAll() {
 		$pdo = PdoFactory::build();
 		$query = $pdo->prepare("SELECT * FROM ej8_turnos");
 		$query->execute();
@@ -33,12 +33,15 @@ class Turnos {
 	
 	
 	public function SetBlog($datos){
-		if ((is_null($datos['titulo']))||(is_null($datos['nombre']))) {
+		
+		if (is_null($datos['titulo'])||is_null($datos['nombre'])) {
 			throw new Exception("Error en la peticion", 1);	
-			foreach ($this->campos as $campo) {
-				$this->$campo = $datos[$campo];
-			}
+		}	
+
+		foreach ($this->campos as $campo) {
+			$this->$campo = $datos[$campo];
 		}
+		
 	}
 
 

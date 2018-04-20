@@ -1,9 +1,10 @@
 <?php  
 
 require __DIR__  . '/classes/Turnos.php';
-#require __DIR__ . '/classes/Turnos.php';
-$TM = new Turnos();
+#
+/*$TM = new Turnos();
 
 $turno = $TM->selectAll();
-
+*/
+Turnos::selectAll();
  ?>
