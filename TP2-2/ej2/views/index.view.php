@@ -10,6 +10,11 @@
 		<section>
 	
 		</section>
+		<h1>Turnos</h1>
+      		<?php 
+
+      		print_r($turnostodos);
+      		 ?>
 		<!--
 		
 		-->

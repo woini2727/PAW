@@ -6,5 +6,6 @@ require __DIR__  . '/classes/Turnos.php';
 
 $turno = $TM->selectAll();
 */
-Turnos::selectAll();
+$turnostodos=Turnos::selectAll();
+
  ?>
