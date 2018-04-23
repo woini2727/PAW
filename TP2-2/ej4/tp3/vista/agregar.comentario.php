@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,8 +6,8 @@
 </head>
 <body>
 	<main>
-		
-		<form action="../controladores/save.comentario.php" method="post"  enctype="multipart/form-data">
+		<?php $id_art=$_GET['id_articulo']?>
+		<form action="../controladores/save.comentario.php?id_articulo=<?=$id_art?>" method="post"  enctype="multipart/form-data">
 			<label for="comentario">Nuevo Comentario </label>
 			<input type="text" name="comentario" placeholder="Ingrese nuevo comentario"  required="required"><br>
 			<input type="submit" name="Aceptar">

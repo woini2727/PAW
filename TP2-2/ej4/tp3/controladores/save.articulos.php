@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/../modelo/articulo_class.php';
+require __DIR__ . '/../modelo/tag.php';
 
 if (empty($_POST)) {
     throw new Exception("Operacion no permitida");
@@ -30,6 +31,27 @@ $datosArticulo = [
 
 articulo::insertarObjetoBD($datosArticulo);
 
-header('Location: /laravel/PAW/tp3/vista/index.php');
+//para los tags
+$articuloModel = new articulo();
+$id_art= $articuloModel->get_id_art($_POST['titulo']);
+
+foreach ($id_art as $id ) {
+      if(isset($_POST['deportes'])){
+        tag::insertarTag($id['id_articulo'],$_POST['deportes']);
+        }
+      if(isset($_POST['viajes'])){
+            tag::insertarTag($id['id_articulo'] ,$_POST['viajes']);
+       }
+      if(isset($_POST['random'])){
+            tag::insertarTag($id['id_articulo'] ,$_POST['random']);
+       } 
+}
+
+
+
+
+  
+
+header('Location: ../vista/index.php');
 
 

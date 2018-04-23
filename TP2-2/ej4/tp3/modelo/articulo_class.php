@@ -1,5 +1,5 @@
 <?php  
-
+	require __DIR__ . "/conexion_db.php";
 
 	class articulo {
 		private $titulo;
@@ -8,21 +8,22 @@
 		public function __construct(){
 				
 		}
+		public function get_id_art($nombre_art){
+			 $pdo = self::retornar_conexion();
+			 $query = $pdo->prepare("SELECT id_articulo FROM articulo WHERE titulo = '$nombre_art' "); //inner join comentarios on id_articulo=id_art
+	        $query->execute();
+	        return $query->fetchAll();
+		}
 
-		public function get_titulo(){
-			//obtengo el titulo de la DB
-			return $titulo_articulo;
-		}
-		public function set_titulo($nuevo_titulo){
-			//busco el id de mi titulo y cambio el titulo
-			$this->titulo=$nuevo_titulo;
-		}
 	
 		public function selectAll(){
+	        
+			//$pdo= conexion::retornar_conexion();
 	        $pdo = self::retornar_conexion();
 	        $query = $pdo->prepare("SELECT * FROM articulo "); //inner join comentarios on id_articulo=id_art
 	        $query->execute();
 	        return $query->fetchAll();
+
     	}
     	public static function insertarObjetoBD($datos){
     			$campos = ['titulo', 'fecha', 'foto'];
@@ -37,6 +38,7 @@
             		$data[] = $campo;
         			}
       		  	$query->execute($data);
+      		  	
     	}
     	public static function actualizarObjeto($columna,$dato,$dato_ant){
     		$pdo = self::retornar_conexion();
@@ -45,8 +47,13 @@
     		$query = $pdo->prepare("UPDATE articulo SET $columna=$dato WHERE titulo=$dato_ant");
 			$query->execute();
 			}
-		public static function borrarObjeto($columna,$dato){
+		public static function borrarObjeto($columna,$dato,$id_art){
 			$pdo = self::retornar_conexion();
+			//primero borro todas las tabla asociadas
+			$query = $pdo->prepare("DELETE FROM comentarios WHERE id_art= $id_art");
+			$query->execute();
+			$query = $pdo->prepare("DELETE FROM articulo_tag WHERE id_articulo= $id_art");
+			$query->execute();
 			$query = $pdo->prepare("DELETE FROM articulo WHERE $columna= $dato");
 			$query->execute();
     	}
@@ -59,16 +66,17 @@
 				    $conn = new PDO("mysql:host=$servername;dbname=blogDB", $username, $password);
 				    // set the PDO error mode to exception
 				    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				    echo "Connected successfully"; 
+				    
 				    }
 				catch(PDOException $e)
 				    {
-				    echo "Connection failed: " . $e->getMessage();
+				    
 				    }
 
 			   return $conn; 
 			    }
 
+		
 		}
 
 ?>

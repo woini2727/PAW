@@ -4,4 +4,4 @@ $id_comentario=$_GET['id_comentario'];
 
 
 Comentario::eliminarComentario($id_comentario);
-header('Location: /laravel/PAW/tp3/vista/index.php');
+header('Location: ../vista/index.php');

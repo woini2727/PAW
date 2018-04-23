@@ -30,6 +30,6 @@ if (!empty($_POST['titulo'])) { //cambio el titulo
 	$nuevo_titulo=$_POST['titulo'];
     articulo::actualizarObjeto('titulo',"'".$nuevo_titulo."'","'".$_GET['foto']."'");
 }
-header('Location: /laravel/PAW/tp3/vista/index.php');
+header('Location: ../vista/index.php');
 
 ?>

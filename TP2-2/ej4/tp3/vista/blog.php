@@ -27,11 +27,22 @@
                        <?php endif; ?>
                     <?php endforeach; ?>
                  <?php endif; ?><br>
+
+                 <h4>Tags</h4>
+                 <?php if ($tag) : ?> 
+                      <?php foreach ($tag as $tg) : ?>
+                            <?php if ($art['id_articulo']==$tg['id_articulo']) : ?> 
+                              <p><?=$tg['nombre_tag'] ?> </p>
+                              
+                            <?php endif; ?>
+                      <?php endforeach; ?>
+                 <?php endif; ?><br>
+
               <a href="agregar.comentario.php?id_articulo=<?=$art['id_articulo']?>">Agregar Comentario</a>
             	<p>fecha de publicacion: <?= $art['fecha'] ?></p>
                  
-                <a href="editar.articulo.php?fecha=<?= $art['fecha'] ?>&titulo=<?= $art['titulo'] ?>&foto=<?= $art['foto']?>">Editar</a>
-                <a href="../controladores/delete.articulos.php?titulo=<?=$art['titulo']?>">Borrar</a>
+                <a href="editar.articulo.php?fecha=<?= $art['fecha'] ?>&titulo=<?= $art['titulo'] ?>&foto=<?= $art['foto']?>">Editar Articulo</a>
+                <a href="../controladores/delete.articulos.php?titulo=<?=$art['titulo']?>">Borrar Articulo</a>
                 <br><br>
 
             <?php endforeach; ?>
