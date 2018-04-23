@@ -1,0 +1,16 @@
+<?php 
+/*
+error_reporting(E_ALL);
+ini_set('display_errors', '1');*/
+require __DIR__  . '/classes/Turnos.php';
+
+$turno = new Turnos();
+if($_POST["buscarID"]){
+}
+	$id= $_POST["buscarID"];
+$t=$turno->BuscarPorId($id);
+#$t='casa';
+
+
+
+require __DIR__. '/views/buscar.turno.view.php';

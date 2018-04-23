@@ -1,9 +1,10 @@
 <?php
-
 require __DIR__ . '/Config.php';
 
 class PdoFactory
 {
+/*
+*/
     public static function build()
     {
         try {
@@ -14,7 +15,7 @@ class PdoFactory
             die();
         }
     }
-
+    
     private static function getDsn()
     {
         $dbConfig = self::getConfig();
@@ -26,3 +27,4 @@ class PdoFactory
         return (new Config())->db;
     }
 }
+?>
