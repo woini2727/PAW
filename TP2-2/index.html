@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PAW</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	
+<div class="jumbotron text-center">
+  <h1>Trabajo práctico N° 2-2</h1>
+<p>Tecnologías del Lado del Servidor – Parte 2
+Apache + PHP </p><p>
+  Woinilowicz, Salvador - 121546 - salvador.woini.@gmail.com</p><p>
+Rodriguez Agustin -96898 agustinrodriguez206@gmail.com	
+</p> 
+	<h2>Configuración del stack - PHP – Persistencia sobre la base de datos</h2>
+</div>
+  <div ></div>
+	
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+	      <h3>1) Instale el Sistema Gestor de Bases de Datos MySQL y las extensiones necesarias para poder interactuar con la misma desde PHP. Documente someramente los pasos realizados.  </h3>
+			<p>Se va a instalar postgresql. y se describe someramente los pasos.</p>
+				
+				Se va a instalar postgresql. y se describe someramente los pasos.
+					//Instalo postgres y algunos complementos <br>
+			<code>
+				$ sudo apt install postgresql libpq5 postgresql-9.5 postgresql-client-9.5 postgresql-client-common postgresql-contrib
+				$ sudo apt install php7.1-pgsql 
+
+			</code>
+		</div>
+	    <div class="col-sm-4">
+	      <h3>
+	      	2) Extienda el punto 8 del práctico anterior para que los datos sean persistidos sobre una base de datos. Luego de persistir, el software deberá entregar un número de turno que el usuario podrá utilizar para volver a ver el mismo (la visualización debe realizarse sobre el mismo formulario).
+	      	</h3>
+			<p>
+			 <a href="turnos/">Ejercicio 2 -</a>  
+			 <a href="turnos.sql">SQL</a>
+			</p>
+				
+	    </div>
+    	<div class="col-sm-4">
+	      <h3>3) Modifique el punto 10 del práctico anterior para que las imágenes sean persistidas sobre una base de datos. El software debe permitir cargar imágenes de hasta 10 MB., solo en formato PNG.
+
+	       </h3>    
+			<p>
+				
+	    	<a href="ej3(Entregar)/">Ejercicio 3 - </a>
+			<a href="ej3.sql">SQL</a>
+			
+			</p>
+	   </div>
+
+	    <div class="col-sm-4">
+
+	      <h3>
+				 4)Modifique el punto 12 del práctico anterior para que la persistencia de los artículos sea realizada sobre la base de datos. Extienda la aplicación para que cada artículo contenga uno o más comentarios y etiquetas.
+
+
+
+
+	        </h3>    
+			
+
+			
+
+
+			<a href="ej4/blog/vista/index.php">Ejercicio 4 -</a>
+			<a href="ej3.sql">SQL</a>
+
+
+
+    	</div>
+	
+	    <div class="col-sm-4">
+	      <h3>
+		      5) ¿Qué es un ataque de inyección de código SQL? ¿Qué riesgos implica? ¿Cómo puede prevenirse? Ejemplifique presentando código vulnerable junto a la solución de la vulnerabilidad.
+		  </h3>    
+
+	      <p>
+				La inyección directa de comandos SQL es una técnica donde un atacante crea o altera comandos SQL existentes para exponer datos ocultos, sobrescribir los valiosos, o peor aún, ejecutar comandos peligrosos a nivel de sistema en el equipo que hospeda la base de datos. Esto se logra a través de la práctica de tomar la entrada del usuario y combinarla con parámetros estáticos para elaborar una consulta SQL.
+
+				Ejemplo
+				Restablecer una contraseña u obtener más privilegios (cualquier servidor de bases de datos)
+				Tenemos este código del lado del servidor:
+				<code>
+					
+				<?php
+				$consulta = "UPDATE usertable SET pwd='$pwd' WHERE uid='$uid';";
+				?>
+				</code>
+
+				Pero un usuario malicioso podría enviar el valor ' or uid like'%admin% a $uid para cambiar la contraseña del administrador, o simplemente cambiar $pwd a jejeje', trusted=100, admin='yes para obtener más privilegios. Entonces, la consulta se tornaría:
+				<code>
+					
+				<?php
+
+				// $uid: ' or uid like '%admin%
+				$consulta = "UPDATE usertable SET pwd='...' WHERE uid='' or uid like '%admin%';";
+
+				// $pwd: jejeje', trusted=100, admin='yes
+				$consulta = "UPDATE usertable SET pwd='jejeje', trusted=100, admin='yes' WHERE
+				...;";
+
+				?>
+				</code>
+
+		  </p>
+		  <p>
+
+
+		  </p>
+
+    	</div>
+
+
+
+
+
+
+    	
+	
+	    <div class="col-sm-4">
+	      <h3>
+				      
+6) ¿Qué es un motor de persistencia ORM (Object-Relational Mapping; Mapeo objeto-relacional?
+¿Qué problemática resuelve?
+		  </h3>    
+
+	      <p>
+			Un ORM te permite convertir los datos de tus objetos en un formato correcto para poder guardar la información en una base de datos (mapeo) creándose una base de datos virtual donde los datos que se encuentran en nuestra aplicación, quedan vinculados a la base de datos (persistencia).
+
+			Es muy trabajoso transformar toda la información que se recibe de la base datos, en los objetos de tu aplicación y viceversa. A ésto se le denomina mapeo. Utilizando un ORM este mapeo será automático, es más, será independiente de la base de datos que estés utilizando en ese momento pudiendo cambiar de motor de base de datos según tus necesidades.
+		  </p> 
+
+
+    	</div>
+     
+
+
+		
+
+  		</div>
+  		</div>
+	</div>
+
+</body>
+
+</style>
+<footer> 
+
+	<div ></div>
+	
+</footer>
+</html>

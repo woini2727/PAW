@@ -77,14 +77,6 @@ class Turnos {
 	}
 
 	public function BuscarPorId($id){
-		/*
-		$pdo = PdoFactory::build();
-
-		#$query = $pdo->prepare("SELECT * FROM ej8_turnos");
-		$query = $pdo->prepare("SELECT * FROM ej8_turnos");
-        $query->execute();
-        return $query->fetchAll();
-		*/
 		$pdo = PdoFactory::build();
 		$query = $pdo->prepare("SELECT * FROM ej8_turnos where id_turno=:id");
 		$query-> bindParam(':id',$id);
