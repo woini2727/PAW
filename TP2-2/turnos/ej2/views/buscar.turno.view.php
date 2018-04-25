@@ -9,7 +9,7 @@
 	<h1>Reserve su turno</h1>
 	<form action="buscar.turno.php"" method="POST" enctype="multipart/form-data" style="text-align: center;">
 			<label>Nro de turno a buscar: </label>
-			<input type="text" name="buscarID">
+			<input type="text" name="buscarID" required >
 			<button type="submit" value="submit">Buscar</button><br><br><br>
 			
 			<label for="titulo">Titulo</label>
