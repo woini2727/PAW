@@ -86,7 +86,8 @@ class Turnos {
         return $query->fetchAll();
 		*/
 		$pdo = PdoFactory::build();
-		$query = $pdo->prepare("SELECT * FROM ej8_turnos where id_turno=$id");
+		$query = $pdo->prepare("SELECT * FROM ej8_turnos where id_turno=:id");
+		$query-> bindParam(':id',$id);
         $query->execute();
         #return "<h2>hola</h2>"
         return $query->fetchAll();
