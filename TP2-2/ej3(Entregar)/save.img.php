@@ -2,7 +2,6 @@
 require __DIR__ ."/imagen.php";
 
 $imagenModel= new Imagen();
-$imagen=$imagenModel->retornar_conexion();
 
 if(isset($_POST['subir'])){ //si apreto el boton
     $cargarImg=($_FILES['imagen']['tmp_name']);
@@ -11,6 +10,7 @@ if(isset($_POST['subir'])){ //si apreto el boton
     
 }
     $imagen=$imagenModel->save_img($img,$type);
-
-header('Location: index.php');
+   
+    header('Location: index.php');
+ 
 ?>
