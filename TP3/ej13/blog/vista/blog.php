@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>blog</title>
-  <link rel="stylesheet" type="text/css" href="../css/blog.css">
+  <link rel="stylesheet" type="text/css" href="../css/blog.css" >
+    <link rel="stylesheet" type="text/css" href="../css/print.css" media="print">
 </head>
 <body class="body">
 	<main>
@@ -19,18 +20,20 @@
            	 	<img class="img" src=<?= $art['foto']?> width="640" height="480">
                 </figcaption>
             	</figure>
-              <h4>Comentarios:</h4>
-                 <?php if ($Comentario) : ?>   
-                    <?php foreach ($Comentario as $comm) : ?>
-                       <?php if ($art['id_articulo']==$comm['id_art']) : ?>  
-                          <li class="comentario"><p><?=$comm['comentario'] ?></p></li>
-                          <a   href="../controladores/delete.comentario.php?id_comentario=<?=$comm['id_comentario']?>">Borrar</a>
-                       <?php endif; ?>
-                    <?php endforeach; ?>
-                    <br><br>
-                    <a class="link" href="agregar.comentario.php?id_articulo=<?=$art['id_articulo']?>" >Agregar Comentario</a>
-                 <?php endif; ?><br>
-
+              <section class="scomentario">
+                <h4 >Comentarios:</h4>
+                   <?php if ($Comentario) : ?>   
+                      <?php foreach ($Comentario as $comm) : ?>
+                         <?php if ($art['id_articulo']==$comm['id_art']) : ?>  
+                            <li class="comentario"><p><?=$comm['comentario'] ?></p></li>
+                            <a   href="../controladores/delete.comentario.php?id_comentario=<?=$comm['id_comentario']?>">Borrar</a>
+                         <?php endif; ?>
+                      <?php endforeach; ?>
+                      <br><br>
+                      <a class="link" href="agregar.comentario.php?id_articulo=<?=$art['id_articulo']?>" >Agregar Comentario</a>
+                   <?php endif; ?><br>
+                </section>
+                <section class="stag">
                  <h4>Tags</h4>
                  <?php if ($tag) : ?> 
                       <?php foreach ($tag as $tg) : ?>
@@ -41,8 +44,8 @@
                       <?php endforeach; ?>
                  <?php endif; ?><br>
 
-              
-            	<p>fecha de publicacion: <?= $art['fecha'] ?></p>
+              </section>
+            	<p class="fecha">fecha de publicacion: <?= $art['fecha'] ?></p>
                  
                 <a  class="link" href="editar.articulo.php?fecha=<?= $art['fecha'] ?>&titulo=<?= $art['titulo'] ?>&foto=<?= $art['foto']?>">Editar Articulo</a>
                 <a  class="link" href="../controladores/delete.articulos.php?titulo=<?=$art['titulo']?>">Borrar Articulo</a>
