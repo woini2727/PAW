@@ -3,8 +3,8 @@
 
 $db = new stdClass();
 
-$db->username = 'postgres';
-$db->password = 'postgres';
+$db->username = 'root';
+$db->password = '';
 $db->host = 'localhost';
 $db->databasename = 'rod_woini_tp2_2';
 

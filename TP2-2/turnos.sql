@@ -1,3 +1,5 @@
+create database rod_woini_tp2_2;
+
 CREATE TABLE ej8_turnos
 (
   id_turno serial,
