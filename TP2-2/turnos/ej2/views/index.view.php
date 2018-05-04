@@ -23,7 +23,7 @@
 		</section>
 	</main>
 	<a href="ej2/views/cargar.turno.view.php">Agregar Turno</a>
-	<a href="ej2/vbuscar.turno.php">Buscar Turno</a>
+	<a href="ej2/buscar.turno.php">Buscar Turno</a>
 </body>
 
 </html>
