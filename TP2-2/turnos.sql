@@ -1,6 +1,6 @@
 CREATE TABLE ej8_turnos
 (
-  id_turno integer NOT NULL DEFAULT nextval('ej8_turnos_id_turno_seq'::regclass),
+  id_turno serial,
   titulo text,
   nombre text,
   email text,

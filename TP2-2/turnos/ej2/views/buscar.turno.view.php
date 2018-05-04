@@ -20,7 +20,7 @@
 	 		</select>
 
 		 	<label for="nombre" >Nombre</label>
-		 	<input type="text" name="nombre" value=<?= $t[0]['nombre'] ?> > <br>
+		 	<input type="text" name="nombre" value=<?= $t[0]['nombre']?>  <br>
 		 	<label for="E-mail">E-mail</label>
 		 	<input type="email" name="email" value=<?= $t[0]['email'] ?>><br>
 		 	<label for="telefono">Telefono</label>
