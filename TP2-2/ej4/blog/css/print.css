@@ -1,0 +1,9 @@
+@media print{
+  body{ }
+ 	a{display: none;}
+ 	.fecha{display: none;}
+ 	.stag{display: none}
+ 	figure{page-break-after: always;}
+ 	.scomentario{page-break-after: always;}
+ 	
+}

@@ -1,5 +1,7 @@
+
+
 <?php
-	require __DIR__ . "../../configDB.php";
+	require __DIR__ . "/../configDB.php";
 	class Conexion {
 		
 

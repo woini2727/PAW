@@ -1,4 +1,4 @@
-create database imagdb;
+create database imgdb;
 
 CREATE TABLE `imagenes` (
 	`id_imagen` INT(11) NOT NULL AUTO_INCREMENT,

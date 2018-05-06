@@ -85,22 +85,22 @@ Rodriguez Agustin -96898 agustinrodriguez206@gmail.com
 		  </h3>    
 
 	      <p>
-				La inyección directa de comandos SQL es una técnica donde un atacante crea o altera comandos SQL existentes para exponer datos ocultos, sobrescribir los valiosos, o peor aún, ejecutar comandos peligrosos a nivel de sistema en el equipo que hospeda la base de datos. Esto se logra a través de la práctica de tomar la entrada del usuario y combinarla con parámetros estáticos para elaborar una consulta SQL.</p>
+				La inyección directa de comandos SQL es una técnica donde un atacante crea o altera comandos SQL existentes para exponer datos ocultos, sobrescribir los valiosos, o peor aún, ejecutar comandos peligrosos a nivel de sistema en el equipo que hospeda la base de datos. Esto se logra a través de la práctica de tomar la entrada del usuario y combinarla con parámetros estáticos para elaborar una consulta SQL.
 
-				<p>Ejemplo
+				Ejemplo
 				Restablecer una contraseña u obtener más privilegios (cualquier servidor de bases de datos)
-				Tenemos este código del lado del servidor:</p> 
-				
+				Tenemos este código del lado del servidor:
+				<code>
 					
-				<p>
+				<?php
 				$consulta = "UPDATE usertable SET pwd='$pwd' WHERE uid='$uid';";
-				
-			
-				</p>
+				?>
+				</code>
 
-				<p>Pero un usuario malicioso podría enviar el valor ' or uid like'%admin% a $uid para cambiar la contraseña del administrador, o simplemente cambiar $pwd a jejeje', trusted=100, admin='yes para obtener más privilegios. Entonces, la consulta se tornaría:</p>
-				<p>
-				
+				Pero un usuario malicioso podría enviar el valor ' or uid like'%admin% a $uid para cambiar la contraseña del administrador, o simplemente cambiar $pwd a jejeje', trusted=100, admin='yes para obtener más privilegios. Entonces, la consulta se tornaría:
+				<code>
+					
+				<?php
 
 				// $uid: ' or uid like '%admin%
 				$consulta = "UPDATE usertable SET pwd='...' WHERE uid='' or uid like '%admin%';";
@@ -109,10 +109,10 @@ Rodriguez Agustin -96898 agustinrodriguez206@gmail.com
 				$consulta = "UPDATE usertable SET pwd='jejeje', trusted=100, admin='yes' WHERE
 				...;";
 
-				
-				
+				?>
+				</code>
 
-		  	</p>
+		  </p>
 		  <p>
 
 

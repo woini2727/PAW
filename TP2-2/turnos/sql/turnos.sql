@@ -1,0 +1,20 @@
+create database 'rod_woini_tp2_2';
+CREATE TABLE `ej8_turnos` (
+	`id_turno` INT(11) NOT NULL AUTO_INCREMENT,
+	`titulo` VARCHAR(50) NULL DEFAULT NULL,
+	`nombre` VARCHAR(50) NULL DEFAULT NULL,
+	`email` VARCHAR(50) NULL DEFAULT NULL,
+	`telefono` VARCHAR(50) NULL DEFAULT NULL,
+	`edad` INT(11) NULL DEFAULT NULL,
+	`talle` VARCHAR(50) NULL DEFAULT NULL,
+	`altura` VARCHAR(50) NULL DEFAULT NULL,
+	`fecha` DATE NOT NULL,
+	`pelo` VARCHAR(50) NULL DEFAULT NULL,
+	`hora` INT(11) NULL DEFAULT NULL,
+	`minutos` INT(11) NULL DEFAULT NULL,
+	PRIMARY KEY (`id_turno`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=3
+;
