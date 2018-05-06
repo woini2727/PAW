@@ -1,5 +1,5 @@
 <?php 
-	  require __DIR__."/get.imagenes.php";				
+	  require __DIR__."/src/get.imagenes.php";				
 ?>
 <!DOCTYPE html>
 <html>
