@@ -1,22 +1,22 @@
 <?php
-	class conexion {
+	require __DIR__ . "../../configDB.php";
+	class Conexion {
+		
 
-		public static function retornar_conexion(){
-				$servername = "localhost";
-				$username = "root";
-				$password = "";
-
+	  	public  function retornar_conexion(){
+				
+	  			$dbConfig= new Config();
+	  			 $dbConfig =$dbConfig->db;
 				try {
-				    $conn = new PDO("mysql:host=$servername;dbname=blogDB", $username, $password);
+				    $conn = new PDO("mysql:host=" . $dbConfig->host . ";dbname=" . $dbConfig->databasename, $dbConfig->username, $dbConfig->password);
 				    // set the PDO error mode to exception
 				    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				    echo "Connected successfully"; 
+				    
 				    }
 				catch(PDOException $e)
 				    {
-				    echo "Connection failed: " . $e->getMessage();
-				    }
-
+				    	print "<h1 style=text-align:center;>" ."¡Error! No se puede acceder a la Base de Datos! "."</h1>" . "<br/>";
+				    	die();}
 			   return $conn; 
 			    }
    }

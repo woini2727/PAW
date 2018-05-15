@@ -7,19 +7,3 @@
  	.scomentario{page-break-after: always;}
  	
 }
-@page {
-		size: A4;
-		
-		@top-left {
-			content: "Mi tercer blog";
-		}
-
-		@top-right {
-			content: "http://localhost/tp3/13/index.php";
-		}
-
-		@bottom-left {
-			content: counter(page) " de " counter(pages);
-		}
-	}
-}
