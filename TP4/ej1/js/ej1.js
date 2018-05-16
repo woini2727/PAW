@@ -5,7 +5,7 @@ var console = console || {},
 
 		MemoTest={
 			 tamaño: 3,
-			 imagenes: ['patiVacio', 'pati1', "pati2"],
+			 imagenes: ['img/Argentina.png', 'img/Argentina2.png', "img/Bahrain.png","img/Bahrain2.png","img/Benin.png","Benin2.png"],
 			iniciar:function nplayers(contenedor){
 				
 				"use strict";
@@ -34,7 +34,12 @@ var console = console || {},
 							for (var j = 0; j < tamañoActual; j++) {
 								var td=document.createElement("TD");
 								var img = document.createElement("img");
-								img.src="img/blanco.png";
+
+								var random=Math.floor((Math.random() * this.imagenes.size) + 0);
+								var imagSelec=this.imagenes[random];
+								img.src=imagSelec;
+								delete (this.imagenes[random]);
+								
 								
 								td.appendChild(img);
 								//document.getElementById("tr").appendChild(td);
