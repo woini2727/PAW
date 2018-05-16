@@ -19,7 +19,7 @@ class PdoFactory
     private static function getDsn()
     {
         $dbConfig = self::getConfig();
-        return "mysql:host=" . $dbConfig->host . ";dbname=" . $dbConfig->databasename;
+        return "pgsql:host=" . $dbConfig->host . ";dbname=" . $dbConfig->databasename;
     }
 
     private static function getConfig()
