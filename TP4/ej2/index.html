@@ -10,7 +10,7 @@
   <div class="selectcolor">
       
    <h3>Seleccionar color</h3>
-    <input type="color" id="myColor" onchange="setcolor()">
+    <input type="color" id="myColor" onchange="setcolor(this)">
   </div>
 
 
@@ -45,12 +45,14 @@
     
 
     
-    function setcolor() {
-        
-         document.css.getElementById("myColor").setAttribute('Value','green');
-    $color=document.css.getElementById("myColor").Value;
-    $css = document.getElementsByTagName('html') ;   
-    $css.style.cssText="'--main-cc"+$color;
+    function setcolor(t) {
+      //console.log(t.value); 
+      var html = document.getElementsByTagName('html')[0];
+	   html.style.setProperty("--main-cc", t.value);   
+   // var =document.getElementById("myColor").get
+    //var color = document.getElementById("myColor").value;
+   // html.style.setProperty('--main-cc', color);
+
 }
     </script>
 </body>
