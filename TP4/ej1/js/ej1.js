@@ -5,11 +5,13 @@ var console = console || {},
 
 		MemoTest={
 			 tamaño: 3,
-			 imagenes: ['img/Argentina.png', 'img/Argentina2.png', "img/Bahrain.png","img/Bahrain2.png","img/Benin.png","Benin2.png"],
+			 imagenes: ['img/Argentina.png', 'img/Argentina2.png', "img/Bahrain.png","img/Bahrain2.png","img/Benin.png",
+			 "img/Benin2.png","img/Brazil.png","img/Brazil2.png","img/blanco.png"],
 			iniciar:function nplayers(contenedor){
 				
 				"use strict";
 				var div = document.getElementById(contenedor);
+				this.imagenes=this.ordernarImagenes(this.imagenes);
 				this.armarGrilla(div);
 				this.armarMemo(div);
 				},
@@ -35,20 +37,18 @@ var console = console || {},
 								var td=document.createElement("TD");
 								var img = document.createElement("img");
 
-								var random=Math.floor((Math.random() * this.imagenes.size) + 0);
-								var imagSelec=this.imagenes[random];
+								//var random=Math.floor((Math.random() * this.imagenes.size) + 0);
+								var imagSelec=this.imagenes.pop();
+								
 								img.src=imagSelec;
-								delete (this.imagenes[random]);
+								
 								
 								
 								td.appendChild(img);
 								//document.getElementById("tr").appendChild(td);
 
 								tr.appendChild(td);
-								img.addEventListener("click", function (event) {
-						        var event = event || e;
-						        event.target.src="img/argentina.png";
-						        })
+								
 
 							}
 							table.appendChild(tr);													
@@ -57,6 +57,16 @@ var console = console || {},
 
 
 			},
+			ordernarImagenes:function(a) {
+				    var j, x, i;
+				    for (i = a.length - 1; i > 0; i--) {
+				        j = Math.floor(Math.random() * (i + 1));
+				        x = a[i];
+				        a[i] = a[j];
+				        a[j] = x;
+				    }
+				    return a;
+				},
 		
 };
 
