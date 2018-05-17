@@ -5,13 +5,15 @@ var console = console || {},
 
 		MemoTest={
 			 tamaño: 3,
-			 imagenes: ['img/Argentina.png', 'img/Argentina2.png', "img/Bahrain.png","img/Bahrain2.png","img/Benin.png","Benin2.png"],
+			 imagenes: ['img/Argentina.png', 'img/Argentina2.png', "img/Bahrain.png","img/Bahrain2.png","img/Benin.png","img/Benin2.png","img/Brazil.png","img/Brazil2.png","img/blanco.png"],
 			iniciar:function nplayers(contenedor){
 				
 				"use strict";
 				var div = document.getElementById(contenedor);
+				this.imagenes=this.ordenarImagenes(this.imagenes);
 				this.armarGrilla(div);
 				this.armarMemo(div);
+
 				},
 
 			armarGrilla:function(div){
@@ -33,22 +35,23 @@ var console = console || {},
 							
 							for (var j = 0; j < tamañoActual; j++) {
 								var td=document.createElement("TD");
+								td.setAttribute("id",i+j)
 								var img = document.createElement("img");
-
-								var random=Math.floor((Math.random() * this.imagenes.size) + 0);
-								var imagSelec=this.imagenes[random];
+								//var imagSelec=this.imagenes.pop();
+								
+								
 								img.src=imagSelec;
-								delete (this.imagenes[random]);
-								
-								
+								//img.src="img/blanco.png";
 								td.appendChild(img);
 								//document.getElementById("tr").appendChild(td);
 
 								tr.appendChild(td);
-								img.addEventListener("click", function (event) {
+								
+								/*img.addEventListener("click", function (event) {
 						        var event = event || e;
-						        event.target.src="img/argentina.png";
-						        })
+						       	//retornarImg(td);
+						        event.target.src=imagSelec;
+						        })*/
 
 							}
 							table.appendChild(tr);													
@@ -57,6 +60,16 @@ var console = console || {},
 
 
 			},
+			ordenarImagenes:function(arreglo) {
+						    var j, x, i;
+						    for (i = arreglo.length - 1; i > 0; i--) {
+						        j = Math.floor(Math.random() * (i + 1));
+						        x = arreglo[i];
+						        arreglo[i] = arreglo[j];
+						        arreglo[j] = x;
+						    }
+						    return arreglo;
+							},
 		
 };
 
