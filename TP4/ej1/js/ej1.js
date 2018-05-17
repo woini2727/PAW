@@ -55,17 +55,18 @@ var console = console || {},
 								tr.appendChild(td);
 								img.addEventListener("click", function (event) {
 							          var event = event || e;
-							          var delayInMilliseconds = 2000	;
+							          var delayInMilliseconds = 1000	;
 							          //antes de dar vuelta me fijo si hay mas de 2 levantadas
-							   if (img.name!="permanent"){ 
+							   if ((this.getAttribute("name"))!="permanent"){ 
+							   		console.log(event.target.getAttribute("name"));
 							          cantFlip=MemoTest.verFlip();
 							          
 							          if (cantFlip<2) {
 							          	  //doy vuelta la carta
 								          event.target.src=MemoTest.imagenes[parseInt(event.target.id)];
-								          event.target.name="flip";
+								          event.target.setAttribute("name","flip");
 							          }
-							          console.log(event.target.name);
+							          
 								     cantFlip=MemoTest.verFlip();
 							          if(cantFlip==2){
 								          b=MemoTest.similitudFlip( event.target);
@@ -74,8 +75,8 @@ var console = console || {},
 								          if(b==true){
 								          	event.target.setAttribute("name","permanent");
 								          	MemoTest.setPermanent(event.target);
-								          	console.log(b);
-								          	console.log(event.target.name);
+								          	//console.log(b);
+								          	//console.log(event.target.name);
 								          }
 								          else if(b==false){
 								          	//todas las no permanent en blanco
