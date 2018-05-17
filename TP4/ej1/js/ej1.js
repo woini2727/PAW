@@ -6,7 +6,7 @@ var console = console || {},
 		MemoTest={
 			 tamaño: 3,
 			 imagenes: ['img/Argentina.png', 'img/Argentina.png', "img/Bahrain.png","img/Bahrain.png","img/Benin.png",
-			 "img/Benin.png","img/Brazil.png","img/Brazil.png","img/blanco.png"],
+			 "img/Benin.png","img/Brazil.png","img/Brazil.png","img/australia.png"],
 			
 			iniciar:function (contenedor){
 				
@@ -30,6 +30,7 @@ var console = console || {},
 				var tbody=document.createElement("TBODY");
 				//tbody.setAttribute("id", "tbody");
 				var n=0;
+				var b=false;
 					for (var i = 0; i < tamañoActual; i++) {
 
 							var tr=document.createElement("TR");
@@ -40,11 +41,13 @@ var console = console || {},
 								var img = document.createElement("img");
 								
 								img.setAttribute("id",n)
+								img.setAttribute('name',"down");
 
 								//var random=Math.floor((Math.random() * this.imagenes.size) + 0);
 								//var imagSelec=this.imagenes.pop();
 								n++;
 								img.src="img/blanco.png";
+								
 
 								td.appendChild(img);
 								//document.getElementById("tr").appendChild(td);
@@ -52,31 +55,38 @@ var console = console || {},
 								tr.appendChild(td);
 								img.addEventListener("click", function (event) {
 							          var event = event || e;
+							          var delayInMilliseconds = 1000	;
 							          //antes de dar vuelta me fijo si hay mas de 2 levantadas
+							   if ((this.getAttribute("name"))!="permanent"){ 
+							   		console.log(event.target.getAttribute("name"));
 							          cantFlip=MemoTest.verFlip();
 							          
 							          if (cantFlip<2) {
 							          	  //doy vuelta la carta
 								          event.target.src=MemoTest.imagenes[parseInt(event.target.id)];
-								          event.target.value="flip";
+								          event.target.setAttribute("name","flip");
 							          }
-								          //busco similitud
-								       /*   var delayInMilliseconds = 1000; //1 second
-
-										setTimeout(function() {
-												  //your code to be executed after 1 second
-										}, delayInMilliseconds);*/
+							          
+								     cantFlip=MemoTest.verFlip();
 							          if(cantFlip==2){
-								          var n=MemoTest.similitudFlip( event.target);
-								          if(n==true){
-								          	event.target.value="permanent";
+								          b=MemoTest.similitudFlip( event.target);
+								          
+
+								          if(b==true){
+								          	event.target.setAttribute("name","permanent");
+								          	MemoTest.setPermanent(event.target);
+								          	//console.log(b);
+								          	//console.log(event.target.name);
 								          }
-								          else if(n==false){
+								          else if(b==false){
 								          	//todas las no permanent en blanco
-								          	MemoTest.todasBlanco();
+								          	setTimeout(function() {
+												  MemoTest.todasBlanco();
+											},delayInMilliseconds);
+								          	
 								          	//event.target.src="img/blanco.png";
 								          }
-							      }
+							      }}
 
 						        })
 
@@ -101,7 +111,7 @@ var console = console || {},
 				var cantFlip=0;
 				for (var i = 0; i < this.imagenes.length; i++) {
 					img=document.getElementById(i);
-					if (img.value=="flip") {
+					if (img.name=="flip") {
 						cantFlip++;
 					}
 				}	
@@ -112,9 +122,8 @@ var console = console || {},
 				console.log(img.id);
 				for (var i = 0; i < this.imagenes.length; i++) {
 					img2=document.getElementById(i);
-						
-						
-					if ((img2.id!=img.id)&&(img2.src==img.src)) {
+
+					if ((img2.id!=img.id)&&(img2.src==img.src)&&(img.name=="flip")&&(img2.name=="flip")) {
 						n=true;
 
 					}
@@ -124,11 +133,22 @@ var console = console || {},
 			todasBlanco:function(){
 				for (var i = 0; i < this.imagenes.length; i++) {
 					img2=document.getElementById(i);
-					if (img2.value!="permanent") {
+					if (img2.name!="permanent") {
+						console.log(img2.name);
 						img2.src="img/blanco.png";
+						img2.name="down";
 					}
 					
 				}	
+			},
+			setPermanent:function(img){
+				var img2;
+				for (var i = 0; i < this.imagenes.length; i++) {
+					img2=document.getElementById(i);
+					if (img2.src==img.src) {
+						img2.setAttribute("name","permanent");
+					}
+				}
 			},
 			
 		
