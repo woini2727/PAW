@@ -4,60 +4,77 @@ var console = console || {},
 
 
 		MemoTest={
-			 tamaño: 3,
+			 tamañol: 3,
+			 tamañoa: 4,
 			 imagenes: ['img/Argentina.png', 'img/Argentina.png', "img/Bahrain.png","img/Bahrain.png","img/Benin.png",
-			 "img/Benin.png","img/Brazil.png","img/Brazil.png","img/australia.png"],
+			 "img/Benin.png","img/Brazil.png","img/Brazil.png","img/australia.png","img/australia.png","img/albania.png","img/albania.png"],
 			
 			iniciar:function (contenedor){
 				
 				"use strict";
 				var div = document.getElementById(contenedor);
+				//this.tamañol: tl;
+			 	//this.tamañoa: ta;
 				this.imagenes=this.ordernarImagenes(this.imagenes);
-				this.armarGrilla(div);
+				this.armarGrilla(div,this.tamañol,this.tamañoa);
 				this.armarMemo(div);
 				},
 
-			armarGrilla:function(div){
+			armarGrilla:function(div,tamañol,tamañoa){
 				var egrilla = document.createElement("h3");
-				tgrilla = document.createTextNode("tamaño del juego: "+ this.tamaño);
+				tgrilla = document.createTextNode("tamaño del juego: "+ tamañol+"x"+tamañoa);
 				 egrilla.appendChild(tgrilla);
-				 div.appendChild(egrilla);},
+				 div.appendChild(egrilla);
+				 this.tamañol=tamañol;
+				 this.tamañoa=tamañoa;
+					},
 
 			armarMemo:function(div){ 
-				var tamañoActual=this.tamaño;
+				var tamañoL=this.tamañol;
+				var tamañoA=this.tamañoa;
 				var table = document.createElement("TABLE");
-				//table.setAttribute("id", "myTable");
+				table.setAttribute("id", "table");
 				var tbody=document.createElement("TBODY");
 				//tbody.setAttribute("id", "tbody");
 				var n=0;
 				var b=false;
-					for (var i = 0; i < tamañoActual; i++) {
+					for (var i = 0; i < tamañoL; i++) {
 
 							var tr=document.createElement("TR");
 							//tr.setAttribute("id", "tr");
 							
-							for (var j = 0; j < tamañoActual; j++) {
+							for (var j = 0; j < tamañoA; j++) {
 								var td=document.createElement("TD");
 								var img = document.createElement("img");
 								
 								img.setAttribute("id",n)
 								img.setAttribute('name',"down");
-
-								//var random=Math.floor((Math.random() * this.imagenes.size) + 0);
-								//var imagSelec=this.imagenes.pop();
 								n++;
 								img.src="img/blanco.png";
-								
-
 								td.appendChild(img);
 								//document.getElementById("tr").appendChild(td);
 
 								tr.appendChild(td);
+								//////////////////////////////////////////////
 								img.addEventListener("click", function (event) {
 							          var event = event || e;
 							          var delayInMilliseconds = 1000	;
+
+							    var ganar=MemoTest.verGanar();     
+							    console.log(ganar);
+							    if (ganar==true){
+							    	var memo=document.getElementById("memo");
+							    	document.getElementById("main").removeChild(memo);
+							    	var memo=document.createElement("div");
+							    	var main=document.getElementById("main").appendChild(memo);
+							    
+							    	MemoTest.imagenes=MemoTest.ordernarImagenes(MemoTest.imagenes);
+									MemoTest.armarGrilla(memo,3,3);
+									MemoTest.armarMemo(memo);
+
+							    }
 							          //antes de dar vuelta me fijo si hay mas de 2 levantadas
-							   if ((this.getAttribute("name"))!="permanent"){ 
+							    if ((this.getAttribute("name"))!="permanent"){ 
 							   		console.log(event.target.getAttribute("name"));
 							          cantFlip=MemoTest.verFlip();
 							          
@@ -134,7 +151,7 @@ var console = console || {},
 				for (var i = 0; i < this.imagenes.length; i++) {
 					img2=document.getElementById(i);
 					if (img2.name!="permanent") {
-						console.log(img2.name);
+						
 						img2.src="img/blanco.png";
 						img2.name="down";
 					}
@@ -149,6 +166,17 @@ var console = console || {},
 						img2.setAttribute("name","permanent");
 					}
 				}
+			},
+			verGanar:function(){
+				var terminar=true;
+				var img2;
+				for (var i = 0; i < this.imagenes.length; i++) {
+					img2=document.getElementById(i);
+					if (img2.getAttribute("name")!="permanent") {
+						terminar=false;
+					}
+				}
+				return terminar;
 			},
 			
 		
