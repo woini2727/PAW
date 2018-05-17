@@ -25,9 +25,12 @@ body {
 /* The Modal (background) */
 .modal {
   display: none;
-  position: relative;
+  position: fixed;
   z-index: 1;
-  padding-top: 100px;
+  padding-top: 60px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 60px;    
   left: 0;
   top: 0;
   width: 100%;
@@ -38,11 +41,11 @@ body {
 
 /* Modal Content */
 .modal-content {
-  position: relative;
+  position:absolute;
   background-color: #fefefe;
   margin: auto;
   padding: 0;
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
 }
 
@@ -112,6 +115,7 @@ body {
 
 img {
   margin-bottom: -4px;
+    max-height: 460px;
 }
 
 .caption-container {

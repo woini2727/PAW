@@ -1,45 +1,47 @@
+var console = console || {},
+  document = document || {},
 
-Lightbox ={
     
+Lightbox={
     
-    iniciar:function(){};
+        
+    slideIndex : 1,
+
     
-       function openModal(){
-      document.getElementById('myModal').style.display = "block";
-    }
+     openModal:function(){
+    document.getElementById('myModal').style.display = "block";
+    },
   
 
-    function closeModal() {
+   closeModal:function(){
       document.getElementById('myModal').style.display = "none";
-    }
+    },
+    
 
- 
-    var slideIndex = 1;
-    showSlides(slideIndex);
 
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
+    plusSlides:function(n) {
+      this.showSlides( this.slideIndex += n);
+    },
 
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
+    currentSlide: function(n)  {
+       this.showSlides( this.slideIndex = n);
+    },
 
-    function showSlides(n) {
+   showSlides:function(n) {
       var i;
       var slides = document.getElementsByClassName("mySlides");
       var dots = document.getElementsByClassName("demo");
       var captionText = document.getElementById("caption");
-      if (n > slides.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = slides.length}
+      if (n > slides.length) {this.slideIndex = 1}
+      if (n < 1) {this.slideIndex = slides.length}
       for (i = 0; i < slides.length; i++) {
           slides[i].style.display = "none";
       }
       for (i = 0; i < dots.length; i++) {
           dots[i].className = dots[i].className.replace(" active", "");
       }
-      slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
-      captionText.innerHTML = dots[slideIndex-1].alt;
+      slides[this.slideIndex-1].style.display = "block";
+      dots[this.slideIndex-1].className += " active";
+      captionText.innerHTML = dots[this.slideIndex-1].alt;
     }
 };

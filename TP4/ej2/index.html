@@ -4,6 +4,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="loader.css">
+	<script type="text/javascript" src="index.js"></script>
+
 </head>
 <body>
 
@@ -11,8 +13,8 @@
   <div class="selectcolor">
       
    <h3>Seleccionar color</h3>
-
-    <input type="color" id="myColor" onchange="setcolor(this)">
+    
+    <input type="color" class="myColor" id="myColor" onchange="Color.setcolor()">
     
 
   </div>
@@ -45,19 +47,6 @@
 
 
 
-<script>
-    
-        function setcolor(t) {
-      //console.log(t.value); 
-      var html = document.getElementsByTagName('html')[0];
-	   html.style.setProperty("--main-cc", t.value);   
 
-
-}
-
-
-
-
-    </script>
 </body>
 </html>
