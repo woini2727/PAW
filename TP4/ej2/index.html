@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="loader.css">
 </head>
@@ -10,12 +11,15 @@
   <div class="selectcolor">
       
    <h3>Seleccionar color</h3>
-    <input type="color" id="myColor" >
+
+    <input type="color" id="myColor" onchange="setcolor(this)">
+    
+
   </div>
 
 
 		
-	<div class="contenedor">
+	<div class="contenedor ">
 		<div class="loader2 circle">
 			
 
@@ -42,18 +46,18 @@
 
 
 <script>
-    document.getElementById("myColor").addEventListener("change",setColor());
-
     
-    function setcolor() {
-        
-   
-    color = document.getElementById("myColor").value;
-        
-    document.documentElement.style.setProperty('--main-cc:', "grey");
-    });
+        function setcolor(t) {
+      //console.log(t.value); 
+      var html = document.getElementsByTagName('html')[0];
+	   html.style.setProperty("--main-cc", t.value);   
+
 
 }
+
+
+
+
     </script>
 </body>
 </html>

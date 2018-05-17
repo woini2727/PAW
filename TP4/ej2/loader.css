@@ -1,22 +1,8 @@
-.loader2 {
 
-  width: 10%;
-  height: 10%;
-  border-radius: 50%;
-    
-
-  animation:spin  10s linear infinite;
-
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
 
 :root{
-  --main-cc:red;
-
+  --main-cc:black;
+  --main-ve:15s;
 
   --circ7-op:0.1;
   --circ6-op:0.8;
@@ -40,13 +26,29 @@
 
 }
 
+.loader2 {
+
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+position: fixed;
+
+  animation:spin  var(--main-ve) linear infinite;
+
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .selectcolor{
- align-content: center
+
 }
 
 .contenedor{
 
-    position: absolute;
+    position:relative;
   padding: 50px,
     margin: 50px;
   width:150px;
@@ -58,7 +60,7 @@
      position:absolute;
 
      padding-bottom:100%;
-     margin-right: 100%;
+     margin-right: 10%;
      margin-left:100%;
      margin-top: 100%;
      margin-bottom: 100%;
