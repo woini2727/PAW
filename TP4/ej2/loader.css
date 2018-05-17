@@ -1,12 +1,11 @@
 .loader2 {
 
   width: 10%;
-  height: 0%;
-  border-radius: 5%;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  height: 10%;
+  border-radius: 50%;
+    
 
-  animation: spin 10s linear infinite;
+  animation:spin  10s linear infinite;
 
 }
 
@@ -16,94 +15,118 @@
 }
 
 :root{
-  --main-cc:grey;
-  --circ4-op:1;
-  --circ3-op:0.8;
-  --circ2-op:0.6;
-  --circ1-op:0.4;
-  --circ-op:0.2;
+  --main-cc:red;
 
+
+  --circ7-op:0.1;
+  --circ6-op:0.8;
+  --circ5-op:0.7;
+  --circ4-op:0.6;
+  --circ3-op:0.5;
+  --circ2-op:0.4;
+  --circ1-op:0.2;
+  --circ-op:0.1;
+
+
+  --circ7-bd:14px;
+  --circ6-bd:12px;
+  --circ5-bd:10px;
   --circ4-bd:8px;
   --circ3-bd:6px;
   --circ2-bd:4px;
-  --circ1-bd:3px;
+  --circ1-bd:2px;
   --circ-bd:1px;
 
 
 }
 
+.selectcolor{
+ align-content: center
+}
+
+.contenedor{
+
+    position: absolute;
+  padding: 50px,
+    margin: 50px;
+  width:150px;
+
+}
 
  .circle{
-     position:fixed;
-     width:5%;
-     padding-bottom:50%;
-     margin-right: 50%;
-     margin-left:50%;
-     margin-top: 10px;
-     margin-bottom: 10px;
+
+     position:absolute;
+
+     padding-bottom:100%;
+     margin-right: 100%;
+     margin-left:100%;
+     margin-top: 100%;
+     margin-bottom: 100%;
+
+
  }
 
- .circle  div  {
-     top:0; left:0;
-     width:100%; height:100%;
-     transform : rotate(24deg);
+div{
+    display:flex;
+    top:0; left:0;
+    width:35%; height:100%;
+
+
+}
+ .circle div {
+
+      top:0; left:0;
+      width:100%; height:100%;
+      transform : rotate(35deg);
 
  }
- .circle:before,  div:before {
 
-
-     position:fixed;
-     top:0; left:0;
-    transform: ; 
-     width:100%; padding-bottom:100%;
-     border-radius: 100%;
-     border: var(--circ-bd) solid var(--main-cc);
-     background: var(--main-cc);
-     opacity:var(--circ-op);
- }
-
- .circle1:before, div:before {
+ .circle1:before {
 
      content:'';
      position:fixed;
      top:0; left:0;
-    transform: ; 
+
+
      width:100%; padding-bottom:100%;
      border-radius: 100%;
      border: var(--circ1-bd) solid var(--main-cc);
      background: var(--main-cc);
      opacity:var(--circ1-op);
  }
-  .circle2:before,  div:before {
+  .circle2:before {
 
      content:'';
      position:fixed;
      top:0; left:0;
-    transform: ; 
+
+ 
      width:100%; padding-bottom:100%;
      border-radius: 100%;
      border: var(--circ2-bd) solid var(--main-cc);
      background: var(--main-cc);
      opacity:var(--circ2-op);
  }
-   .circle3:before,  div:before {
+   .circle3:before {
 
      content:'';
      position:fixed;
      top:0; left:0;
-    transform: ; 
+
+
      width:100%; padding-bottom:100%;
      border-radius: 100%;
      border: var(--circ3-bd) solid var(--main-cc);
      background: var(--main-cc);
      opacity:var(--circ3-op);
  }
-   .circle4:before,  div:before {
+   .circle4:before {
 
      content:'';
      position:fixed;
      top:0; left:0;
-    transform: ; 
+
+ 
      width:100%; padding-bottom:100%;
      border-radius: 100%;
      border: var(--circ4-bd) solid var(--main-cc);
@@ -111,3 +134,42 @@
      opacity:var(--circ4-op);
      
  }
+    .circle5:before {
+
+     content:'';
+     position:fixed;
+     top:0; left:0;
+
+     width:100%; padding-bottom:100%;
+     border-radius: 50%;
+     border: var(--circ5-bd) solid var(--main-cc);
+     background: var(--main-cc);
+     opacity:var(--circ5-op);
+     
+ }
+.circle6 {
+
+     content:'';
+
+        position:fixed;
+    
+     width:100%; padding-bottom:100%;
+     border-radius: 50%;
+
+     
+ }
+
+    .circle6:before {
+
+     content:'';
+     position:fixed;
+     top:0; left:0;
+
+     width:100%; padding-bottom:100%;
+     border-radius: 50%;
+     border: var(--circ6-bd) solid var(--main-cc);
+     background: var(--main-cc);
+     opacity:var(--circ5-op);
+     
+ }
+

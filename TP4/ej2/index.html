@@ -7,28 +7,51 @@
 <body>
 
 <h2>Preloader</h2>
+  <div class="selectcolor">
+      
+   <h3>Seleccionar color</h3>
+    <input type="color" id="myColor" onchange="setcolor()">
+  </div>
+
 
 		
-	<spam class="loader2 circle ">
-
+	<div class="contenedor">
+		<div class="loader2 circle">
+			
 
 		    <div class="circle">
 			    <div class="circle1">
 				    <div class="circle2">
 					    <div class="circle3">
 					    	<div class="circle4">
+					    		<div class="circle5">
+					    			<div class="circle6">
+					    			
+					    			</div>
+					    		</div>
 					    	</div>
 					    </div>
 				    </div>
 			    </div>
 		    </div>
 
+		</div>
+
+	</div>
 
 
 
+<script>
+    
 
-	</spam>
-
-
+    
+    function setcolor() {
+        
+         document.css.getElementById("myColor").setAttribute('Value','green');
+    $color=document.css.getElementById("myColor").Value;
+    $css = document.getElementsByTagName('html') ;   
+    $css.style.cssText="'--main-cc"+$color;
+}
+    </script>
 </body>
 </html>
