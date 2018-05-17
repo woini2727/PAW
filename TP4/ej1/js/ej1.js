@@ -5,9 +5,10 @@ var console = console || {},
 
 		MemoTest={
 			 tamaño: 3,
-			 imagenes: ['img/Argentina.png', 'img/Argentina2.png', "img/Bahrain.png","img/Bahrain2.png","img/Benin.png",
-			 "img/Benin2.png","img/Brazil.png","img/Brazil2.png","img/blanco.png"],
-			iniciar:function nplayers(contenedor){
+			 imagenes: ['img/Argentina.png', 'img/Argentina.png', "img/Bahrain.png","img/Bahrain.png","img/Benin.png",
+			 "img/Benin.png","img/Brazil.png","img/Brazil.png","img/blanco.png"],
+			
+			iniciar:function (contenedor){
 				
 				"use strict";
 				var div = document.getElementById(contenedor);
@@ -50,17 +51,32 @@ var console = console || {},
 
 								tr.appendChild(td);
 								img.addEventListener("click", function (event) {
-						          var event = event || e;
-						          //antes de dar vuelta me fijo si hay mas de 2 levantadas
-						          cantFlip=MemoTest.verFlip();
-						          console.log(cantFlip);
-						          if (cantFlip<2) {
-						          //doy vuelta la carta
-						          event.target.src=MemoTest.imagenes[parseInt(event.target.id)];
-						          event.target.value="flip";
-						          }
-						         
-						          //busco otra prendida y la comparo
+							          var event = event || e;
+							          //antes de dar vuelta me fijo si hay mas de 2 levantadas
+							          cantFlip=MemoTest.verFlip();
+							          
+							          if (cantFlip<2) {
+							          	  //doy vuelta la carta
+								          event.target.src=MemoTest.imagenes[parseInt(event.target.id)];
+								          event.target.value="flip";
+							          }
+								          //busco similitud
+								       /*   var delayInMilliseconds = 1000; //1 second
+
+										setTimeout(function() {
+												  //your code to be executed after 1 second
+										}, delayInMilliseconds);*/
+							          if(cantFlip==2){
+								          var n=MemoTest.similitudFlip( event.target);
+								          if(n==true){
+								          	event.target.value="permanent";
+								          }
+								          else if(n==false){
+								          	//todas las no permanent en blanco
+								          	MemoTest.todasBlanco();
+								          	//event.target.src="img/blanco.png";
+								          }
+							      }
 
 						        })
 
@@ -90,6 +106,29 @@ var console = console || {},
 					}
 				}	
 				return cantFlip;
+			},
+			similitudFlip:function(img){
+				var n=false;
+				console.log(img.id);
+				for (var i = 0; i < this.imagenes.length; i++) {
+					img2=document.getElementById(i);
+						
+						
+					if ((img2.id!=img.id)&&(img2.src==img.src)) {
+						n=true;
+
+					}
+				}	
+				return n;
+			},
+			todasBlanco:function(){
+				for (var i = 0; i < this.imagenes.length; i++) {
+					img2=document.getElementById(i);
+					if (img2.value!="permanent") {
+						img2.src="img/blanco.png";
+					}
+					
+				}	
 			},
 			
 		
