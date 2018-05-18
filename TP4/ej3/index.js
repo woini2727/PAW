@@ -27,6 +27,7 @@ Lightbox={
        this.showSlides( this.slideIndex = n);
     },
 
+
    showSlides:function(n) {
       var i;
       var slides = document.getElementsByClassName("mySlides");
