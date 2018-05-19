@@ -6,21 +6,42 @@ var console = console || {},
 		MemoTest={
 			 tamañol: 3,
 			 tamañoa: 4,
-			 imagenes: ['img/Argentina.png', 'img/Argentina.png', "img/Bahrain.png","img/Bahrain.png","img/Benin.png",
-			 "img/Benin.png","img/Brazil.png","img/Brazil.png","img/australia.png","img/australia.png","img/albania.png","img/albania.png"],
+			 imagenes:[],
+			 imagenes3x4: ['img/Argentina.png', 'img/Argentina.png', "img/Bahrain.png","img/Bahrain.png","img/Benin.png",
+			 "img/Benin.png","img/Brazil.png","img/Brazil.png","img/Australia.png","img/Australia.png",
+			 "img/albania.png","img/albania.png"],
+			 imagenes4x5: ['img/Argentina.png', 'img/Argentina.png', "img/Bahrain.png","img/Bahrain.png","img/Benin.png",
+			 "img/Benin.png","img/Brazil.png","img/Brazil.png","img/Australia.png","img/Australia.png",
+			 "img/albania.png","img/albania.png","img/Barbados.png","img/Barbados.png","img/Belgium.png",
+			 "img/Belgium.png","img/Belize.png","img/Belize.png","img/Burundi.png","img/Burundi.png"],
+			 imagenes5x6: ['img/Argentina.png', 'img/Argentina.png', "img/Bahrain.png","img/Bahrain.png","img/Benin.png",
+			 "img/Benin.png","img/Brazil.png","img/Brazil.png","img/Australia.png","img/Australia.png",
+			 "img/albania.png","img/albania.png","img/Barbados.png","img/Barbados.png","img/Belgium.png",
+			 "img/Belgium.png","img/Belize.png","img/Belize.png","img/Burundi.png","img/Burundi.png",
+			 "img/Cambodia.png","img/Cambodia.png","img/Cape-Verde.png","img/Cape-Verde.png",
+			 "img/Central-African-Republic.png","img/Central-African-Republic.png","img/Cuba.png","img/Cuba.png", 
+			 "img/Grecee.png","img/Grecee.png"],
 			
 			iniciar:function (contenedor){
 				
 				"use strict";
 				var div = document.getElementById(contenedor);
-				//this.tamañol: tl;
-			 	//this.tamañoa: ta;
-				this.imagenes=this.ordernarImagenes(this.imagenes);
+				
+				
 				this.armarGrilla(div,this.tamañol,this.tamañoa);
 				this.armarMemo(div);
 				},
 
 			armarGrilla:function(div,tamañol,tamañoa){
+				if (tamañol==3){
+					this.imagenes=this.imagenes3x4;
+				}
+			 	else if(tamañol==4){
+					this.imagenes=this.imagenes4x5;
+				}else {
+					this.imagenes=this.imagenes5x6;
+				}
+				this.imagenes=this.ordernarImagenes(this.imagenes);
 				var egrilla = document.createElement("h3");
 				tgrilla = document.createTextNode("tamaño del juego: "+ tamañol+"x"+tamañoa);
 				 egrilla.appendChild(tgrilla);
@@ -60,22 +81,9 @@ var console = console || {},
 							          var event = event || e;
 							          var delayInMilliseconds = 1000	;
 
-							    var ganar=MemoTest.verGanar();     
-							    console.log(ganar);
-							    if (ganar==true){
-							    	var memo=document.getElementById("memo");
-							    	document.getElementById("main").removeChild(memo);
-							    	var memo=document.createElement("div");
-							    	var main=document.getElementById("main").appendChild(memo);
-							    
-							    	MemoTest.imagenes=MemoTest.ordernarImagenes(MemoTest.imagenes);
-									MemoTest.armarGrilla(memo,3,3);
-									MemoTest.armarMemo(memo);
-
-							    }
-							          //antes de dar vuelta me fijo si hay mas de 2 levantadas
+							       //antes de dar vuelta me fijo si hay mas de 2 levantadas
 							    if ((this.getAttribute("name"))!="permanent"){ 
-							   		console.log(event.target.getAttribute("name"));
+							   		//console.log(event.target.getAttribute("name"));
 							          cantFlip=MemoTest.verFlip();
 							          
 							          if (cantFlip<2) {
@@ -104,7 +112,15 @@ var console = console || {},
 								          	//event.target.src="img/blanco.png";
 								          }
 							      }}
+							     	 var ganar=MemoTest.verGanar();     
+							   
+								    //aca se revisa si se gano
+								    if (ganar==true){			    
+								    	//creo un boton para pasar a la sig dificultad
+								    	MemoTest.crearLinkSigDif();
 
+							    }
+							       
 						        })
 
 							}
@@ -136,7 +152,7 @@ var console = console || {},
 			},
 			similitudFlip:function(img){
 				var n=false;
-				console.log(img.id);
+				//console.log(img.id);
 				for (var i = 0; i < this.imagenes.length; i++) {
 					img2=document.getElementById(i);
 
@@ -178,6 +194,50 @@ var console = console || {},
 				}
 				return terminar;
 			},
+			crearLinkSigDif:function(){
+				var div=document.getElementById('memo'),
+					link=document.createElement("a"),
+				 btn = document.createElement("BUTTON"),        
+				 t = document.createTextNode("Siguiente Dificultad");       
+				 btn.appendChild(t);
+				div.appendChild(btn);
+				btn.addEventListener("click", function (event) {
+					MemoTest.armarNuevaGrilla();})
+				
+			},
+			armarNuevaGrilla:function(){
+				var memo=document.getElementById("memo");
+				document.getElementById("main").removeChild(memo);
+				var memo=document.createElement("div");
+				memo.setAttribute("id","memo");
+				var main=document.getElementById("main").appendChild(memo);
+				MemoTest.imagenes=MemoTest.ordernarImagenes(MemoTest.imagenes);
+				//cambio la dificultad
+				if(this.tamañol==3){
+					this.tamañol++;
+					this.tamañoa++;
+					var l=4,
+				 	a=5;
+				 	
+					MemoTest.armarGrilla(memo,l,a);
+					MemoTest.armarMemo(memo);
+				}
+				else if(this.tamañol==4){
+					this.tamañol++;
+					this.tamañoa++;
+					var l=5,
+				 	a=6;
+				 	
+					MemoTest.armarGrilla(memo,l,a);
+					MemoTest.armarMemo(memo);
+				}else {
+					var l=3,
+				 	a=3;
+				 	MemoTest.armarGrilla(memo,l,a);
+					MemoTest.armarMemo(memo);
+				}	
+			},
+
 			
 		
 };
