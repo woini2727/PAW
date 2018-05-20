@@ -12,4 +12,13 @@ Color={
 
 
     },
+
+
+    setRange: function(){
+    	var html = document.getElementsByTagName('html')[0];
+    	var range =document.getElementById('myRange').value;
+    	html.style.setProperty("--main-ve", range+"s");
+    }
+
+
 }   ;   

@@ -10,18 +10,23 @@
 <body>
 
 <h2>Preloader</h2>
-  <div class="selectcolor">
+  <div class="selectValor">
       
    <h3>Seleccionar color</h3>
-    
+    	
     <input type="color" class="myColor" id="myColor" onchange="Color.setcolor()">
-    
 
+    <h3>Seleccionar Velocidad</h3>
+	<h5 style="display:inline-flex; ">
+	<p>1</p>	
+	<input type="range" min="1" max="20" class="myRange" id="myRange" onchange="Color.setRange()">    
+	<p>20</p>
+	</h5>
   </div>
 
 
 		
-	<div class="contenedor ">
+	<div class="contenedor " >
 		<div class="loader2 circle">
 			
 
