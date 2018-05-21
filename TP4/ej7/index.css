@@ -1,0 +1,114 @@
+.videoContainer{
+	position: relative;
+	padding-top: 0.1vw;
+    width: 100%;
+	align-content: center;
+	background-color: black;
+     display: block;
+
+}
+
+video {
+		align-content: center;
+		margin-left: 35%;
+		width: 30%;
+}
+.principl{
+    
+}
+.videoDescription{
+
+}
+h2.videoDescription {
+	font-size:2vw;
+	position: relative;
+	align-content: center;
+	color:white;
+	text-align: center;
+    
+	
+}
+
+.videoControls{
+    visibility: hidden;
+    position: absolute;
+}
+
+#video1 {
+	visibility: visible;
+	position: relative;
+}
+#video2 {
+	visibility: hidden;
+		position:absolute;
+}
+#video3 {
+	visibility: hidden;
+	position:absolute;
+}
+
+.cascade-slider_container{
+	position: relative;
+}
+
+h1 {
+
+	position: relative;
+	font-family: "Times New Roman", Times;
+	font:Monospace;
+	font-size:3vw;
+	text-align: center;
+
+}
+
+h4 {
+	font-size:1.5vw;
+	margin-top: 0;
+        max-width: 10vw;
+    max-height: 15vw;
+}
+
+p {
+		font-size:1vw;
+}
+
+img {
+	position: relative;
+  	margin-bottom: -4px;
+    max-height: 460px;
+    width: 10vw;
+    height: 8vw;
+
+}
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column {
+  float: left;
+height: 25%;
+  display:inline;
+}
+.listContainer{
+    
+    display: inline;
+    align-content:space-between;
+}
+
+#c1{
+visibility: hidden;
+    position: absolute;
+}
+#c2{
+    visibility:visible;
+    position:relative;
+}
+#c3{
+   visibility: visible;
+    position:relative;
+}

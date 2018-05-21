@@ -1,1 +1,147 @@
-index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<title>Reproductor de video</title>
+
+    <script  type="text/javascript" src="js/index.js">  </script>
+
+   	<link rel="stylesheet" type="text/css" href="index.css">
+
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+
+
+
+</head>
+<body>
+	<h1>Mi Reproductor PAW</h1>
+	
+<div clas="principal">
+    
+
+		<div class="videoContainer"  id="video1">
+			
+		<video width="400" controls poster="img/img1.jpeg" >
+	  	
+	  		<source src="video/bbb.mp4" type="video/mp4" alt="Big Buck BUNNY">
+
+		
+		</video>
+		<h2 class="videoDescription" >
+			Titulo del Video principal 1
+		</h2>		
+		</div>
+		<div class="videoContainer"  id="video2">
+		<video width="400" controls poster="img/img2.jpeg" >
+	  	
+	  		<source src="video/bbb.mp4" type="video/mp4" alt="Big Buck BUNNY">
+
+		
+		</video>
+
+
+		<h2 class="videoDescription" >
+			Titulo del Video principal 2
+		</h2>
+		</div>
+		<div class="videoContainer"  id="video3">
+		<video width="400" controls poster="img/img3.jpeg" >
+	  	
+	  		<source src="video/bbb.mp4" type="video/mp4" alt="Big Buck BUNNY">
+
+		
+		</video>
+		<h2 class="videoDescription">
+			Titulo del Video principal 3
+		</h2>
+		</div>
+		<div class="videoControls"> 
+        <button class="play" title="Play"> &#x25BA; </button> 
+          
+        <div class="progress">  
+            <div id="progress_box">  
+                <span id="play_progress"></span> 
+            </div>  
+        </div> 
+          
+        <button class="fullScreen" title="FullScreen Toggle">  <<>> </button> 
+        
+    </div> 
+
+</div>
+<div class="listContainer">
+
+    <div class="row " >
+    <div class="cascade-slider_slides">
+
+            <span>
+
+            </span>
+            <span>
+
+            </span>
+                 <div class="column" id="c1">
+
+                    <img src="img/img1.jpeg" alt="">
+                    <div class="videoDescription">
+
+                        <h4 >
+                            Titulo del Video no rep
+                        </h4>
+                            <p>
+    
+                                Description
+                            </p>
+    
+                    </div>
+                </div>
+                 <div class="column"id="c2">
+
+                    <img src="img/img2.jpeg" alt="">
+                    <div class="videoDescription">
+
+                        <h4 >
+                            Titulo del Video no rep  rep sfoiash diasbd aksdj
+                        </h4>
+                            <p>
+    
+                                Description
+                            </p>
+    
+                    </div>
+                </div>
+                 <div class="column" id="c3">
+
+                    <img src="img/img3.jpeg" alt="">
+                    <div class="videoDescription">
+
+                        <h4 >
+                            Titulo del Video no 
+                        </h4>
+                            <p>
+    
+                                Description
+                            </p>
+    
+                    </div>
+                </div>
+                     
+                
+
+					
+
+    </div>
+</div>
+
+
+</div>
+			     
+</body>
+</html>
