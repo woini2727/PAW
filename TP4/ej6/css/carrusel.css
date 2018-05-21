@@ -1,0 +1,40 @@
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+
+.slide{
+  margin-left: 23%;
+
+
+}
+
+.prev{
+  cursor: pointer;
+
+  padding: 16px;
+  margin-top: -22px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+   position: absolute;
+   left: 0px;
+   bottom: 300px;
+   border-style: solid;
+  border-radius: 0 3px 3px 0;
+  margin-left:40px;
+}
+ .next {
+  cursor: pointer;
+
+  padding: 16px;
+  margin-top: -22px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+   position: absolute;
+   right: 0px;
+   bottom: 300px;
+  border-radius: 0 3px 3px 0;
+   border-style: solid;
+   margin-right:40px;
+}
