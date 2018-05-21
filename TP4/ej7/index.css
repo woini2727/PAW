@@ -13,12 +13,8 @@ video {
 		margin-left: 35%;
 		width: 30%;
 }
-.principl{
-    
-}
-.videoDescription{
 
-}
+
 h2.videoDescription {
 	font-size:2vw;
 	position: relative;
@@ -35,6 +31,7 @@ h2.videoDescription {
 }
 
 #video1 {
+	autoplay:true;
 	visibility: visible;
 	position: relative;
 }
@@ -64,8 +61,10 @@ h1 {
 h4 {
 	font-size:1.5vw;
 	margin-top: 0;
-        max-width: 10vw;
-    max-height: 15vw;
+    max-width: 10vw;
+    min-height: 5vw;
+    min-width: 2vw;
+    max-height: 5vw;
 }
 
 p {
@@ -90,9 +89,10 @@ img {
   clear: both;
 }
 .column {
-  float: left;
-height: 25%;
-  display:inline;
+	float: left;
+	height: 35%;
+	table-layout:auto;
+  	display:block;
 }
 .listContainer{
     

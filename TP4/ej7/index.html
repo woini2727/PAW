@@ -26,9 +26,9 @@
 <div clas="principal">
     
 
-		<div class="videoContainer"  id="video1">
+		<div class="videoContainer"  id="video1" autoplay="true" >
 			
-		<video width="400" controls poster="img/img1.jpeg" >
+		<video width="400" controls autoplay="true" poster="img/img1.jpeg" onended="video.currentVideo(1)" >
 	  	
 	  		<source src="video/bbb.mp4" type="video/mp4" alt="Big Buck BUNNY">
 
@@ -38,8 +38,9 @@
 			Titulo del Video principal 1
 		</h2>		
 		</div>
-		<div class="videoContainer"  id="video2">
-		<video width="400" controls poster="img/img2.jpeg" >
+
+		<div class="videoContainer"  id="video2" autoplay="true" >
+		<video width="400" controls poster="img/img2.jpeg" onended="video.currentVideo(2)">
 	  	
 	  		<source src="video/bbb.mp4" type="video/mp4" alt="Big Buck BUNNY">
 
@@ -51,8 +52,8 @@
 			Titulo del Video principal 2
 		</h2>
 		</div>
-		<div class="videoContainer"  id="video3">
-		<video width="400" controls poster="img/img3.jpeg" >
+		<div class="videoContainer"  id="video3" autoplay="true" >
+		<video width="400" controls poster="img/img3.jpeg" onended="video.currentVideo(1)">
 	  	
 	  		<source src="video/bbb.mp4" type="video/mp4" alt="Big Buck BUNNY">
 
