@@ -13,7 +13,7 @@ var console = console || {},
             tp=document.createTextNode("0%");
         var progress=document.createElement("progress");
         progress.setAttribute("id","barra");
-        progress.setAttribute("max","100");
+        progress.setAttribute("max","99");
         
         p.setAttribute("class","bp");
 
@@ -67,7 +67,7 @@ var console = console || {},
          
           var progress =document.getElementById('barra');
            
-          if (this.n==this.imagenes.length-1){
+          if (this.n==0){
               this.valueb=unidad;
           }else{
             this.valueb=this.valueb+unidad;
