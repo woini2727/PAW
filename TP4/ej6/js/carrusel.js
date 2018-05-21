@@ -8,16 +8,29 @@ var console = console || {},
   		iniciar:function(div){
   			var div = document.getElementById(div);
   			var img=document.createElement("img");
+        var p=document.createElement("p"),
+            tp=document.createTextNode("0%");
+        var progress=document.createElement("progress");
+        progress.setAttribute("id","barra");
+        progress.setAttribute("max","100");
+        progress.setAttribute("value","50");
+        p.setAttribute("class","bp");
+
+
+
   			img.src=this.imagenes[0];
   			
   			img.setAttribute("id","imag");
   			img.setAttribute("width","800px");
   			img.setAttribute("height","300px");
   			
+        p.appendChild(tp);
+
   			div.appendChild(img);
+        div.appendChild(progress);
+         div.appendChild(p);
   		},
   		anttimg:function(){
-  			
   		
   			var img = document.getElementById("imag");
   			if(this.n==0){
@@ -33,14 +46,21 @@ var console = console || {},
   			  			
   		},
   		nextimg:function(){
-  			console.log(this.n);
+  			
   			var img = document.getElementById("imag");
   				this.n=this.n+1;
   				if (this.n==this.imagenes.length){
   				this.n=0;}
-  				img.src=this.imagenes[this.n];
-  				
-  		
+  				img.src=this.imagenes[this.n];	
 
-  		}
+          this.incProgress();
+  		
+  		},
+      incProgress:function(){
+         var progress=getElementById('barra');
+      },
+      decProgress:function(){
+
+      },
+
   	};
