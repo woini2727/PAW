@@ -34,11 +34,17 @@ float: left;
 	text-align: center;
 }
 .chek{
-	
+
 	background-color: white;
 	margin-right: 10px;
 	float: right;
 	width:  70px;
+	height: 40px;
+}
+.btVista{
+	background-color: azure;
+	margin-right: 10px;
+	width:  100px;
 	height: 40px;
 }
 .header1{
