@@ -1,6 +1,6 @@
 .videoContainer{
 	position: relative;
-	padding-top: 0.1vw;
+	padding-top: 0.5vw;
     width: 100%;
 	align-content: center;
 	background-color: black;
@@ -18,14 +18,15 @@ video {
 }
 .videoDescription{
 
+	max-width: : 10vw;
+	max-height: 6vw;
 }
 h2.videoDescription {
 	font-size:2vw;
 	position: relative;
 	align-content: center;
 	color:white;
-	text-align: center;
-    
+	text-align: center;   
 	
 }
 
@@ -56,20 +57,23 @@ h1 {
 	position: relative;
 	font-family: "Times New Roman", Times;
 	font:Monospace;
-	font-size:3vw;
+	font-size:2vw;
 	text-align: center;
 
 }
 
 h4 {
-	font-size:1.5vw;
+	font-size:1vw;
 	margin-top: 0;
-        max-width: 10vw;
-    max-height: 15vw;
+    max-width: 8vw;
+    max-height: 4vw;
+	min-width: 4vw;
+	min-height: 4vw;
 }
 
 p {
-		font-size:1vw;
+		font-size:0.8vw;
+		position:absolute;
 }
 
 img {
@@ -91,8 +95,10 @@ img {
 }
 .column {
   float: left;
-height: 25%;
+	height: 25%;
   display:inline;
+
+
 }
 .listContainer{
     
