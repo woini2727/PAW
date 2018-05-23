@@ -1,3 +1,4 @@
+
   var console = console || {},
   document = document || {},
 
@@ -33,3 +34,4 @@ video ={
       
     }
 }
+

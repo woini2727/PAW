@@ -1,6 +1,6 @@
 .videoContainer{
 	position: relative;
-	padding-top: 0.1vw;
+	padding-top: 0.5vw;
     width: 100%;
 	align-content: center;
 	background-color: black;
@@ -15,13 +15,16 @@ video {
 }
 
 
+	max-width: : 10vw;
+	max-height: 6vw;
+}
+
 h2.videoDescription {
 	font-size:2vw;
 	position: relative;
 	align-content: center;
 	color:white;
-	text-align: center;
-    
+	text-align: center;   
 	
 }
 
@@ -44,6 +47,20 @@ h2.videoDescription {
 	position:absolute;
 }
 
+
+.cursor {
+  cursor: pointer
+}
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+
 .cascade-slider_container{
 	position: relative;
 }
@@ -53,22 +70,24 @@ h1 {
 	position: relative;
 	font-family: "Times New Roman", Times;
 	font:Monospace;
-	font-size:3vw;
+	font-size:2vw;
 	text-align: center;
 
 }
 
 h4 {
-	font-size:1.5vw;
+	font-size:1vw;
 	margin-top: 0;
-    max-width: 10vw;
-    min-height: 5vw;
-    min-width: 2vw;
-    max-height: 5vw;
+
+    max-width: 8vw;
+    max-height: 4vw;
+	min-width: 4vw;
+	min-height: 4vw;
 }
 
 p {
-		font-size:1vw;
+		font-size:0.8vw;
+
 }
 
 img {
@@ -89,20 +108,22 @@ img {
   clear: both;
 }
 .column {
-	float: left;
-	height: 35%;
-	table-layout:auto;
-  	display:block;
+
+  float: left;
+	height: 25%;
+  display:inline;
+border-color: red;
+border-width: 10vw;
 }
 .listContainer{
-    
+    border: black;
     display: inline;
     align-content:space-between;
 }
 
 #c1{
-visibility: hidden;
-    position: absolute;
+	visibility: visible;
+    position: relative;
 }
 #c2{
     visibility:visible;

@@ -1,0 +1,157 @@
+header {
+ margin: 30px;
+}
+body{
+ margin: 25px;
+ background-color: #ffeee6;
+ 
+
+}
+main{
+	margin: 40px;
+}
+footer{
+	margin: 30px;
+	background-color: #80bfff;
+
+}
+progress{
+	
+	display: list-item;
+	width: 800px;
+}
+.bp{
+	text-align: center;
+	margin-right: 350px;
+}
+.logo {
+ width: 150px;
+height: 70px;
+float: left;
+}
+.number{
+	font-size: 24px;
+	text-align: center;
+}
+.chek{
+
+	background-color: white;
+	margin-right: 10px;
+	float: right;
+	width:  70px;
+	height: 40px;
+}
+.btVista{
+	background-color: azure;
+	margin-right: 10px;
+	width:  100px;
+	height: 40px;
+}
+.header1{
+	 overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+.ddmenu{
+
+  background-color: #ffccff;
+  padding: 10px 10px;
+}
+.iznav{
+	
+	
+	
+}
+.linknav{
+	font-size: 18px;
+	float: right;	
+	margin:5px;
+  	color: black;
+  	text-align: center;
+}
+.carrusel{
+	margin: 20px ;
+	
+}
+.img_car{
+	width: 24%;
+	height: 300px;
+	margin: 5px;
+	
+
+}
+.fd{
+	background-color: #f1f1f1;
+
+}
+.fd2{
+	  display: flex;
+   	 flex-direction: row-reverse;
+}
+.ftt{
+		background-color: #f1f1f1;
+		border-style: solid;
+		border-width: 1px;
+
+}
+.fdimg{
+
+	width: 280px;
+	height: 250px;
+
+}
+
+.descripcion{
+	 display: flex;
+	height: 150px;
+ 	background-color: 	#ff9666;
+}
+.brandimg{
+	width: 280px;
+	height: 250px;
+}
+
+.articulos{
+	border-style: solid;
+	border-width: 1px;
+	display: flex;
+	height: 300px;
+	background-color: white;
+	
+}
+
+.art{
+	border-right-style: solid;
+	border-width: 1px;
+ 	 width: 200px;
+
+ 	 margin: 20px;
+}
+.articulos2{
+	
+	border-style: solid;
+	border-width: 1px;
+	display: flex;
+	height: 300px;
+	display: flex;
+}
+.sing{
+	padding: 130px
+}
+.botones{
+	margin: 10px;
+	float:right;
+}
+.firma{
+	
+	float: right;
+}
+.sfirma{
+	margin-top: 100px;
+	margin-bottom: 30px;
+}
+.boton{
+	width: 100px;
+	height: 50px;
+	background-color:green;
+}
