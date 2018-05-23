@@ -15,7 +15,7 @@ $(document).ready(function(){
    $("#vista").on({
    		click: function(){
    			var display = $(".fd2").css('display');
-   			console.log(display);
+   			
    			if(display=="flex"){
    				$(".fd2").css("display","block");
    			}else{
