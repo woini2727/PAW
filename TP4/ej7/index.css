@@ -13,12 +13,14 @@ video {
 		margin-left: 35%;
 		width: 30%;
 }
-
+.principl{
+    
+}
+.videoDescription{
 
 	max-width: : 10vw;
 	max-height: 6vw;
 }
-
 h2.videoDescription {
 	font-size:2vw;
 	position: relative;
@@ -34,7 +36,6 @@ h2.videoDescription {
 }
 
 #video1 {
-	autoplay:true;
 	visibility: visible;
 	position: relative;
 }
@@ -78,7 +79,6 @@ h1 {
 h4 {
 	font-size:1vw;
 	margin-top: 0;
-
     max-width: 8vw;
     max-height: 4vw;
 	min-width: 4vw;
@@ -108,12 +108,12 @@ img {
   clear: both;
 }
 .column {
-
   float: left;
 	height: 25%;
   display:inline;
 border-color: red;
 border-width: 10vw;
+
 }
 .listContainer{
     border: black;
