@@ -4,8 +4,10 @@
 	<meta charset="UTF-8">
 
 	<title>Reproductor de video</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <script  type="text/javascript" src="js/index.js">  </script>
+
+    <script  type="text/javascript" src="js/indexjq.js">  </script>
 
    	<link rel="stylesheet" type="text/css" href="index.css">
 
@@ -26,42 +28,44 @@
 <div clas="principal">
     
 
-		<div class="videoContainer"  id="video1">
+		<div class="videoContainer play"  id="video1">
 			
-		<video width="400" controls poster="img/img1.jpeg" class="video">
-	  	
-	  		<source src="video/bbb.mp4" type="video/mp4" alt="Big Buck BUNNY">
+			<video width="400" controls poster="img/img1.jpeg" class="video">
+		  	
+		  		<source src="video/bbb.mp4" type="video/mp4" alt="Big Buck BUNNY">
 
-		
-		</video>
-		<h2 class="videoDescription" >
-			Titulo del Video principal 1
-		</h2>		
+			
+			</video>
+			<h2 class="videoDescription nextplay" >
+				Titulo del Video principal 1
+			</h2>		
 		</div>
-		<div class="videoContainer"  id="video2">
-		<video width="400" controls poster="img/img2.jpeg" class="video">
-	  	
-	  		<source src="video/bbb.mp4" type="video/mp4" alt="Big Buck BUNNY">
-
 		
-		</video>
+		<div class="videoContainer nexplay"  id="video2">
+			<video width="400" controls poster="img/img2.jpeg" class="video">
+		  	
+		  		<source src="video/bbb.mp4" type="video/mp4" alt="Big Buck BUNNY">
+
+			
+			</video>
 
 
-		<h2 class="videoDescription" >
-			Titulo del Video principal 2
-		</h2>
+			<h2 class="videoDescription" >
+				Titulo del Video principal 2
+			</h2>
 		</div>
-		<div class="videoContainer"  id="video3">
-		<video width="400" controls poster="img/img3.jpeg" class="video">
-	  	
-	  		<source src="video/bbb.mp4" type="video/mp4" alt="Big Buck BUNNY">
+		<div class="videoContainer "  id="video3" >
+			<video width="400" controls poster="img/img3.jpeg" class="video">
+		  	
+		  		<source src="video/bbb.mp4" type="video/mp4" alt="Big Buck BUNNY">
 
-		
-		</video>
-		<h2 class="videoDescription">
-			Titulo del Video principal 3
-		</h2>
+			
+			</video>
+			<h2 class="videoDescription">
+				Titulo del Video principal 3
+			</h2>
 		</div>
+
 		<div class="videoControls"> 
         <button class="play" title="Play"> &#x25BA; </button> 
           
@@ -73,7 +77,7 @@
           
         <button class="fullScreen" title="FullScreen Toggle">  <<>> </button> 
         
-    </div> 
+</div> 
 
 </div>
 <div class="listContainer">
@@ -87,7 +91,7 @@
             <span>
 
             </span>
-                 <div class="column" id="c1">
+                 <div class="column demo cursor" id="c1">
 
                     <img src="img/img1.jpeg" alt="">
                     <div class="videoDescription">
@@ -102,7 +106,7 @@
     
                     </div>
                 </div>
-                 <div class="column"id="c2">
+                 <div class="column demo cursor"id="c2">
 
                     <img src="img/img2.jpeg" alt="">
                     <div class="videoDescription">
@@ -117,7 +121,7 @@
     
                     </div>
                 </div>
-                 <div class="column" id="c3">
+                 <div class="column demo cursor" id="c3">
 
                     <img src="img/img3.jpeg" alt="">
                     <div class="videoDescription">

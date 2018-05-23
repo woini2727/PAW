@@ -48,6 +48,20 @@ h2.videoDescription {
 	position:absolute;
 }
 
+
+.cursor {
+  cursor: pointer
+}
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+
 .cascade-slider_container{
 	position: relative;
 }
@@ -73,7 +87,7 @@ h4 {
 
 p {
 		font-size:0.8vw;
-		position:absolute;
+
 }
 
 img {
@@ -97,18 +111,19 @@ img {
   float: left;
 	height: 25%;
   display:inline;
-
+border-color: red;
+border-width: 10vw;
 
 }
 .listContainer{
-    
+    border: black;
     display: inline;
     align-content:space-between;
 }
 
 #c1{
-visibility: hidden;
-    position: absolute;
+	visibility: visible;
+    position: relative;
 }
 #c2{
     visibility:visible;
