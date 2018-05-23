@@ -24,7 +24,7 @@ $(document).ready(function()
 		$(vid[vidIndex]).parent().css("visibility","visible");
 		$(vid[vidIndex]).parent().css("position","relative");
 		$(list[vidIndex]).addClass("active");
-		vid[vidIndex].stop();
+		vid[vidIndex].pàuse();
 		}else{
 			vidIndex++;
 		$(vid[vidIndex]).parent().css("visibility","visible");

@@ -14,7 +14,7 @@ video {
 		width: 30%;
 }
 
-
+.VideoDescription{
 	max-width: : 10vw;
 	max-height: 6vw;
 }
@@ -34,7 +34,7 @@ h2.videoDescription {
 }
 
 #video1 {
-	autoplay:true;
+
 	visibility: visible;
 	position: relative;
 }
@@ -86,7 +86,7 @@ h4 {
 }
 
 p {
-		font-size:0.8vw;
+	font-size:0.8vw;
 
 }
 
@@ -119,6 +119,7 @@ border-width: 10vw;
     border: black;
     display: inline;
     align-content:space-between;
+
 }
 
 #c1{
