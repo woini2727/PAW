@@ -4,21 +4,21 @@
     width: 100%;
 	align-content: center;
 	background-color: black;
-     display: block;
 
 }
 
 video {
 		align-content: center;
-		margin-left: 35%;
-		width: 30%;
+		margin-left: 25%;
+		width: 50%;
 }
 
+
 .VideoDescription{
+
 	max-width: : 10vw;
 	max-height: 6vw;
 }
-
 h2.videoDescription {
 	font-size:2vw;
 	position: relative;
@@ -61,6 +61,19 @@ h2.videoDescription {
 }
 
 
+.overlay {
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  transition: 1s ease;
+
+  color: waith;
+
+  text-align: center;
+
+}
+
 .cascade-slider_container{
 	position: relative;
 }
@@ -78,7 +91,6 @@ h1 {
 h4 {
 	font-size:1vw;
 	margin-top: 0;
-
     max-width: 8vw;
     max-height: 4vw;
 	min-width: 4vw;
@@ -108,12 +120,14 @@ img {
   clear: both;
 }
 .column {
-
   float: left;
 	height: 25%;
   display:inline;
 border-color: red;
 border-width: 10vw;
+ display:block;
+
+
 }
 .listContainer{
     border: black;
