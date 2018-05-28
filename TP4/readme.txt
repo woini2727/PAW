@@ -1,0 +1,2 @@
+-El ejercicio 3 y 4 estan juntos
+-El ejercicio 5 tiene varias entradas 
