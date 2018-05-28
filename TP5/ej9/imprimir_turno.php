@@ -1,6 +1,7 @@
  <?php  
 	$titulo=$_POST["titulo"];
 	$nombre=$_POST["nombre"];
+
 	$email=$_POST["email"];
 	$minutos=$_POST["minutos"];
 	$telefono=$_POST["telefono"];
@@ -10,9 +11,11 @@
 	$fecha_nac=$_POST["fecha_nacimiento"];
 	$pelo=$_POST["color_pelo"];
 	$turno=$_POST["horario"];
-	
 
 
-		return [$titulo,$nombre,$email,$turno,$minutos];
+		$data= ['titulo'=>$titulo,'nombre'=>$nombre,'email'=>$email,'truno'=>$turno,'minutos'=>$minutos];
+
+		echo $data;
+
 
 	?>
