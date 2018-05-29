@@ -36,9 +36,21 @@ $(document).ready(function(){
 		        		console.log($turno);
 		        	alert($turno.titulo);
 
-		        		$('#mostrarFormulario').append(turno.titulo);
-		        		
+		        		//$('#mostrarFormulario').append(turno.titulo);
+$('#mostrarFormulario').empty();
+var table = $('<table border=1>'),
+    row;
 
+    $.each($turno, function (index,value){
+
+    row = $('<tr>');
+    row.append($('<td>', {html: index}))
+       .append($('<td>', {html: value}));
+    table.append(row);
+    });
+
+
+$('#mostrarFormulario').append(table);
 		        	}
 		        );
 
