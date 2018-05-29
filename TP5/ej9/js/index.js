@@ -4,7 +4,7 @@ $(document).ready(function(){
         e.preventDefault();  //prevent form from submitting
         var data = $(".formulario :input").serializeArray();
         //console.log(data); //use the console for debugging, F12 in Chrome, not alerts
-        console.log(data);
+ 
 
 			
 		        $.ajax({
@@ -14,24 +14,30 @@ $(document).ready(function(){
 		                		nombre:$('#nombre').val(),
 		                		titulo:$('select[name=titulo]').val(),
 		                		email:$('input[name=email]').val(),
+		                		telefono:$('input[name=telefono]').val(),
 		                		minutos:$('select[name=minutos]').val(),
 		                		edad:$('input[name=edad]').val(),
 		                		talle:$('input[name=talle]').val(),
 		                		altura:$('input[name=altura]').val(),
 		                		fecha_nac:$('input[name=fecha_nac]').val(),
-		                		pelo:$('input[name=pelo]').val(),
+		                		pelo:$('input[name=colorpelo]').val(),
 		                		horario:$('select[name=horario]').val(),
 
 		                },
 		                url:   'imprimir_turno.php',
 		                type:  'post',
+		               // dataType:"json",
 
 
 		        }).done(
 
 		        	function(data){
-		        		console.log(data);
-		        		alert(data['nombre']);
+		        		var $turno=JSON.parse(data);
+		        		console.log($turno);
+		        	alert($turno.titulo);
+
+		        		$('#mostrarFormulario').append(turno.titulo);
+		        		
 
 		        	}
 		        );
