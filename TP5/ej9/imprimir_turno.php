@@ -1,4 +1,5 @@
  <?php  
+	
 	$titulo=$_POST["titulo"];
 	$nombre=$_POST["nombre"];
 	$email=$_POST["email"];
@@ -13,6 +14,6 @@
 	
 
 
-		return [$titulo,$nombre,$email,$turno,$minutos];
+		echo $titulo;
 
 	?>
