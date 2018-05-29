@@ -15,16 +15,16 @@
 
 		 <form action="imprimir_turno.php" method="post" class="formulario">
 		 	<label for="titulo">Titulo</label>
-		 	<select name="titulo" size="1" name="titulo">
+		 	<select name="titulo" size="1" >
 	 			<option value="Sr">Sr</option>
 	 			<option value="Sra">Sra</option>
 	 			<option value="Sta">Sta</option>
 	 		</select>
 
 		 	<label for="nombre">Nombre</label>
-		 	<input type="text" name="nombre">
+		 	<input type="text" name="nombre" id="nombre">
 		 	<label for="E-mail">E-mail</label>
-		 	<input type="email" name="email"><br>
+		 	<input type="email" name="email" id="email"><br>
 		 	<label for="telefono">Telefono</label>
 		 	<input type="text" name="telefono">
 		 	<label for="edad">Edad</label>
@@ -39,7 +39,7 @@
 	 		<label for="color de pelo">color de pelo</label>
 	 		<input type="text" name="color_pelo"><br>
 	 		<label for="horario del turno">Horario del Turno</label>
-	 		<select name="horario" size="1" name="horario">
+	 		<select name="horario" size="1" >
 	 			<option value="8">8</option>
 	 			<option value="9">9</option>
 	 			<option value="10">10</option>
@@ -52,7 +52,7 @@
 	 			<option value="17">17</option>
 	 			
 	 		</select>
-	 		<select name="minutos" size="1" name="minutos">
+	 		<select name="minutos" size="1" >
 	 			<option value="00">:00</option>
 	 			<option value="15">:15</option>
 	 			<option value="30">:30</option>
@@ -65,4 +65,5 @@
 		 </form>
 		 <div id="mostrarFormulario"></div>
 	</body>
+
 

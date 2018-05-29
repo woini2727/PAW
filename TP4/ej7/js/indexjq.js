@@ -63,7 +63,7 @@ $(".column").on("click",function(){
 	
 
 
-	vidIndex=n;git pu
+	vidIndex=n;
 	$(vid[n]).parent().css("visibility","visible");
 	$(vid[n]).parent().css("position","relative");
 	$(list[vidIndex]).addClass("active");
