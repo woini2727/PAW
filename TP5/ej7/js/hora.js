@@ -11,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function() {
 						      	document.getElementById('hora').innerHTML =xhttp.responseText;
 						      	setTimeout(hora(),1000);
 						      	
+						    }else if (his.status !== 200){
+						    	alert("Servidor no responde, Reintentando...");
+						    	setTimeout(hora(),2000);
 						    }
 						  
 					    }
