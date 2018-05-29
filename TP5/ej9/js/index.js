@@ -33,8 +33,8 @@ $(document).ready(function(){
 
 		        	function(data){
 		        		var $turno=JSON.parse(data);
-		        		console.log($turno);
-		        	alert($turno.titulo);
+		        		
+		       
 
 		        		//$('#mostrarFormulario').append(turno.titulo);
 $('#mostrarFormulario').empty();
