@@ -30,11 +30,11 @@ $(document).ready(function(){
 
 		        	function(data){
 		        		var $turno=JSON.parse(data);
+ 
 						$('#mostrarFormulario').empty();
 						
 						var table = $('<table border=1>'),
 						    row;
-
 						    $.each($turno, function (index,value){
 
 						    row = $('<tr>');
