@@ -1,12 +1,9 @@
 $(document).ready(function(){
 
-		$('.formulario').on('submit', function(e) { //use on if jQuery 1.7+
-        e.preventDefault();  //prevent form from submitting
+		$('.formulario').on('submit', function(e) { 
+        e.preventDefault();  
         var data = $(".formulario :input").serializeArray();
-        //console.log(data); //use the console for debugging, F12 in Chrome, not alerts
- 
 
-			
 		        $.ajax({
 
 		                data:{
@@ -33,24 +30,20 @@ $(document).ready(function(){
 
 		        	function(data){
 		        		var $turno=JSON.parse(data);
-		        		
-		       
+ 
+						$('#mostrarFormulario').empty();
+						
+						var table = $('<table border=1>'),
+						    row;
+						    $.each($turno, function (index,value){
 
-		        		//$('#mostrarFormulario').append(turno.titulo);
-$('#mostrarFormulario').empty();
-var table = $('<table border=1>'),
-    row;
+						    row = $('<tr>');
+						    row.append($('<td>', {html: index}))
+						       .append($('<td>', {html: value}));
+						    table.append(row);
+						    });
 
-    $.each($turno, function (index,value){
-
-    row = $('<tr>');
-    row.append($('<td>', {html: index}))
-       .append($('<td>', {html: value}));
-    table.append(row);
-    });
-
-
-$('#mostrarFormulario').append(table);
+						$('#mostrarFormulario').append(table);
 		        	}
 		        );
 
