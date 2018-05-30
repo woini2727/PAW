@@ -1,34 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-       #map {
-        height: 400px;
-        width: 100%;
-       }
-    </style>
+      <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script src="js/index.js"></script>
   </head>
   <body>
     <h3>My Google Maps Demo</h3>
+    <div id="locationField">
+  <input id="autocomplete" placeholder="Direccion"
+         onFocus="geolocate()" type="text"></input>
+</div>
     <div id="map"></div>
-    <script>
-      function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
+
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABeYe5Nz6xUeuvXxLjTvWGoaHDE5WPims&callback=initMap">
     </script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABeYe5Nz6xUeuvXxLjTvWGoaHDE5WPims&libraries=places"></script>
-
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABeYe5Nz6xUeuvXxLjTvWGoaHDE5WPims&libraries=places&callback=initAutocomplete" async defer></script>  
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABeYe5Nz6xUeuvXxLjTvWGoaHDE5WPims&libraries=places&callback=initAutocomplete"
+        async defer></script>
   </body>
 </html>
