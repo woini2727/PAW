@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-      <link rel="stylesheet" type="text/css" href="css/index.css">
-  <script src="js/index.js"></script>
-</head>
-<body>
-  
-<div id="locationField">
-  <input id="autocomplete" placeholder="Enter your address"
-         onFocus="geolocate()" type="text"></input>
-</div>
+<html>
+  <head>
+    <title>Place Autocomplete</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+      <script src="js/index.js"></script>
+       <link rel="stylesheet" type="text/css" href="css/index.css">
+  </head>
+  <body>
+    <input id="pac-input" class="controls" type="text"
+        placeholder="Enter a location">
 
 
-<!-- Replace the value of the key parameter with your own API key. -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABeYe5Nz6xUeuvXxLjTvWGoaHDE5WPims&libraries=places&callback=initAutocomplete"
+       <div id="map"></div>
+
+ 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABeYe5Nz6xUeuvXxLjTvWGoaHDE5WPims&libraries=places&callback=initMap"
         async defer></script>
-</body>
+  </body>
 </html>
-
