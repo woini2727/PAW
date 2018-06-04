@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <link rel="stylesheet" type="text/css" href="css/index.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="js/index.js"></script>
+    <title>Place Autocomplete</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+      <script src="js/index.js"></script>
+       <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
   <body>
-    <h3>My Google Maps Demo</h3>
-    <div id="locationField">
-  <input id="autocomplete" placeholder="Direccion"
-         onFocus="geolocate()" type="text"></input>
-</div>
-    <div id="map"></div>
-  <!--Se cargan primero las librerias luego se llaman las funciones -->
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABeYe5Nz6xUeuvXxLjTvWGoaHDE5WPims&libraries=places&callback=iniciar">
+  <div>
+  	<h1>Hola maps</h1>
+  	<h3>Ingresar Direccion a buscar</h3>
+  </div>	
+  	
+    <input id="pac-input" class="controls" type="text"
+        placeholder="Ingrese Ubicacion">
 
-    </script>
 
-    <!--script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABeYe5Nz6xUeuvXxLjTvWGoaHDE5WPims&libraries=places">
+       <div id="map" class="map"></div>
 
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABeYe5Nz6xUeuvXxLjTvWGoaHDE5WPims&libraries=places&callback=initAutocomplete" async defer></script-->  
-
+ 
+    <script src="https://maps.googleapis.com/maps/api/js?key=<<YOUR KEY>>&libraries=places&callback=initMap"
+        async defer></script>
 
   </body>
-</html>
+</html> 

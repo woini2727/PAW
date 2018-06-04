@@ -2,16 +2,24 @@
       #map {
         width: 50%;
         height: 50%;
-        position: relative;
+        position: fixed;
+        opacity: 0.5;
+        margin-left: 25%;
+        border-color: #ffffff;
       }
+
+      #map:hover {
+        opacity: 1;
+      }
+
       /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
         margin: 0;
         padding: 0;
       }
-      #container{
-        
+      h1{
+        text-align: center;
       }
       .controls {
         margin-top: 10px;
@@ -36,7 +44,7 @@
         width: 300px;
       }
 
-      #pac-input:focus {
+      #pac-input #map:focus {
         border-color: #4d90fe;
       }
 
@@ -44,14 +52,3 @@
         font-family: Roboto;
       }
 
-      #type-selector {
-        color: #fff;
-        background-color: #4d90fe;
-        padding: 5px 11px 0px 11px;
-      }
-
-      #type-selector label {
-        font-family: Roboto;
-        font-size: 13px;
-        font-weight: 300;
-      }
