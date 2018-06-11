@@ -10,4 +10,4 @@ TP2-2 punto de ingres TP2-2/index.html //
 
 TP5
 
-ej10 tener en cuenta que no tieene la clave de google agregar en <ingrese su clave> 
+ej10 tener en cuenta que no tieene la clave de google agregar en '<ingrese su clave>' 
