@@ -2,7 +2,7 @@ Instalar dependencias
 	
 	composer install && npm intall
 
-Para iniciar se Inicia node
+Debe iniciar node
 
 	Inciar: $ npm start
 
