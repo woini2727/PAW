@@ -1,3 +1,4 @@
+
 var console = console || {},
   document = document || {},
 
