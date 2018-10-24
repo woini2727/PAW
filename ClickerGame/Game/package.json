@@ -18,7 +18,11 @@
     "express-ws": "^4.0.0",
     "hashmap": "^2.3.0",
     "hbs": "^4.0.1",
+<<<<<<< HEAD
     "request": "^2.87.0",
+=======
+    "require": "^2.4.20",
+>>>>>>> 6c537c0a9ac1a4b295bfad914534b6dc91d2dc6c
     "socket.io": "^2.1.1"
   }
 }

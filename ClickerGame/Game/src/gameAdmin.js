@@ -1,6 +1,13 @@
 
 Game = require('./Game');
 var HashMap = require('hashmap');
+
+var dotenv = require ('dotenv');
+dotenv.load ();
+
+var request = require("request");
+
+
 function gameAdmin(){
 
 		//harcodeadas las partidas
@@ -22,15 +29,63 @@ function gameAdmin(){
 
 
 	gameAdmin.prototype.terminarPartidaBySocketId = function terminarPartidaBySocketId(socketId){
-		//this.
-		//console.log(this.gameArray);
-		this.gameArray.splice(this.SockGameMap.get(socketId),1);
-		//console.log(this.gameArray);
 
+		this.gameArray.splice(this.SockGameMap.get(socketId),1);
+
+	}	
+
+
+	gameAdmin.prototype.FinalizarGame = function FinalizarGame(socketId)
+	{
+
+
+		let game = this.gameArray[this.SockGameMap.get(socketId)];
+
+;
+
+		if(game.socketId1==socketId){
+			ganador= game.players.url1;
+			perdedor=game.players.url2;
+		}else{
+			ganador= game.players.url2;
+			perdedor=game.players.url1;
+		}
+
+		console.log('ganador',ganador,'perdedor',perdedor);
+ 
+		var options = { method: 'GET',
+		  url:  process.env.URL+'/api/game/terminar',
+		  qs: 
+		   { 
+		     api_token:process.env.API_TOKEN,
+		     ganador: ganador,
+		     perdedor: perdedor,
+
+		 	}
+		 };
+
+		request(options, function (error, response, ganadorResponse) {
+		  if (error) throw new Error(error);
+		  console.log(ganadorResponse);
+		});
+		
 	}
 
-		gameAdmin.prototype.getMap = function getMap(){
-		return this.map;
+
+
+	gameAdmin.prototype.getMap = function getMap(){
+	return this.map;
+	}
+
+	gameAdmin.prototype.IsPlayerOne = function IsPlayerOne(socketId){
+		console.log('ADMIN GAME',(this.gameArray[this.SockGameMap.get(socketId)]).socketId1,' s id',socketId)
+			if((this.gameArray[this.SockGameMap.get(socketId)]).socketId1 == socketId){
+				return true;
+			}else{
+				return false;
+			}
+
+
 	}
 
 	gameAdmin.prototype.clickEvent = function clickEvent(socketId,opp, clickData){
@@ -212,13 +267,13 @@ function gameAdmin(){
 	    		if(valor.partidaId==id){
 		    		if(valor.userId2==hash)
 		    		{
-		    			console.log('agregar oponente',hash,id);
+		    			//console.log('agregar oponente',hash,id);
 		    			ub = indice;
 		    			newP = false;
 		    			Admin.addOponent(hash,socket.id,indice);
 		    			console.log("agregado a partida");
 		    			return ub;
-		    			console.log(ub);
+		    			//console.log(ub);
 		    			//console.log(newP);    		
 		    		}
 		    		else
